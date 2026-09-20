@@ -36,3 +36,5 @@ python tools/harmony/harmony_build.py --project src/app/harmony --deveco "<DevEc
 | 历史基线 | [迁移记录](docs/migration/SDD_ARCHITECTURE_MIGRATION.md) |
 
 治理检查：Git Bash 执行 `bash tools/sdd/check.sh`。产品测试结果不由治理检查替代。
+
+本轮已按用户授权正式签收（保留已知问题）；Git 版本与后续优先整改见 [签收记录](docs/acceptance/v0.1.0.md)。

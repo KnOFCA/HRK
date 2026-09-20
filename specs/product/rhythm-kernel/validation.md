@@ -15,3 +15,7 @@
 ## 真人补测完成
 
 用户随后实际完成手指命中/双指拖动释放、暂停恢复听感、旋转及旋转后触摸，13 个关联 TC PASS。两轮 Replay 完整结果等于 Headless；诊断 LateInput 17/3、overflow=0 如实保留。测试后已断开真机连接。详见 [真人证据](../../../evidence/PROD-HRK/2026-09-20-human-final/manifest.json) 和系统验证记录。
+
+## 用户正式签收
+
+实现基线已提交并推送至用户指定 GitHub 仓库，按用户明确授权签收本次迭代，保留 LateInput 已知问题并登记下一迭代优先任务。签收证据和版本引用见 [正式签收记录](../../../docs/acceptance/v0.1.0.md)。
