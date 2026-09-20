@@ -33,3 +33,5 @@
 ## Linux sanitizer CI 失败调查
 
 首次远程运行配置和构建成功，但 CTest 返回8，SDD步骤未执行。保留ASan/UBSan与失败门槛，先将测试错误摘要发布为工作流annotation以便审查，再按实际诊断修复；Windows和Harmony既有证据不替代此Linux结果。
+
+根因已由远程 ASan 堆栈确认：测试分配器缺失 nothrow new/delete 配对，libstdc++ stable_sort 临时缓冲分配被错误地与 free 配对。补齐标量/数组 nothrow 重载，新增 REG-NOTHROW-ALLOCATION 检查计数和释放，并保留所有 sanitizer 检查。产品源码与 HAP 不变。

@@ -10,6 +10,7 @@
 #include <sstream>
 #include <thread>
 #include <cstdlib>
+#include <new>
 #ifdef _WIN32
 #include <windows.h>
 #include <psapi.h>
@@ -21,6 +22,13 @@ void* operator new[](std::size_t n){return ::operator new(n);}
 void operator delete[](void* p) noexcept{std::free(p);}
 void operator delete(void* p,std::size_t) noexcept{std::free(p);}
 void operator delete[](void* p,std::size_t) noexcept{std::free(p);}
+// libstdc++ stable_sort obtains scratch storage through nothrow new. Keep that
+// path in the same malloc/free allocation family as the counting replacements.
+void* operator new(std::size_t n,const std::nothrow_t&) noexcept{try{return ::operator new(n);}catch(...){return nullptr;}}
+void* operator new[](std::size_t n,const std::nothrow_t&) noexcept{try{return ::operator new[](n);}catch(...){return nullptr;}}
+void operator delete(void* p,const std::nothrow_t&) noexcept{::operator delete(p);}
+void operator delete[](void* p,const std::nothrow_t&) noexcept{::operator delete[](p);}
+
 using namespace hrk;
 using namespace hrk::reference;
 namespace {
@@ -48,6 +56,14 @@ std::vector<JudgmentResult> run(const std::vector<TimeNs>& steps,bool render=tru
 void judge(TimeNs t,float x,bool perfect){Fixture f;f.load();f.touch(t,x);f.advance(2*second);check(f.session.judgments().size()==1);const auto& j=f.session.judgments()[0];check(j.type==(perfect?Perfect:Miss));check(j.error==(perfect?t-second:window+1));}
 }
 int main(){
+ test("REG-NOTHROW-ALLOCATION",[]{
+  const auto before=allocationCount.load();
+  auto* scalar=new(std::nothrow) int(42);auto* array=new(std::nothrow) int[3]{1,2,3};
+  const bool valid=scalar && array && *scalar==42 && array[2]==3;
+  const auto allocations=allocationCount.load()-before;
+  delete scalar;delete[] array;
+  check(valid && allocations==2);
+ });
  test("TC-BASE-001",[]{check(second+500*ms==1500000000 && second-500*ms==500000000);});
  test("TC-BASE-002",[]{check(seconds(1500*ms)==1.5 && milliseconds(1500*ms)==1500);});
  test("TC-BASE-003",[]{EntityIds ids;std::set<EntityId> unique;for(int i=0;i<10000;++i)unique.insert(ids.next());check(unique.size()==10000);});
