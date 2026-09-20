@@ -10,5 +10,20 @@ jobs:
           node-version: 22
       - run: cmake -S . -B build/ci -G Ninja -DHRK_SANITIZE=ON -DCMAKE_BUILD_TYPE=Debug
       - run: cmake --build build/ci
-      - run: ctest --test-dir build/ci --output-on-failure
+      - name: Test with sanitizers
+        shell: bash
+        run: |
+          set +e
+          ctest --test-dir build/ci --output-on-failure > build/ci/ctest-output.txt 2>&1
+          result=$?
+          cat build/ci/ctest-output.txt
+          if [ "$result" -ne 0 ]; then
+            python3 - <<'PY'
+          from pathlib import Path
+          output = Path("build/ci/ctest-output.txt").read_text()
+          output = output[:20000].replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+          print("::error title=CTest failure::" + output)
+          PY
+          fi
+          exit "$result"
       - run: bash tools/sdd/check.sh
