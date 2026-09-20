@@ -18,6 +18,9 @@ HRK 面向音游内核与 Game Module 开发者。v0.1.0 验证同一 ReferenceG
 | Feature ID | domain | 规格 | 优先级 | 状态来源 |
 |---|---|---|---|---|
 | PROD-HRK | product | [rhythm-kernel](specs/product/rhythm-kernel/spec.md) | P0 | 规格 front matter |
+| PROD-INPUT-RELIABILITY | product | [v0.1.1 输入可靠性](specs/product/input-reliability/spec.md) | P1，确认核心正确性缺陷后升级 P0 | Draft；仅文档规划，状态以 front matter 为准 |
+
+v0.1.1 草案仅规划 LI-001～LI-004，不替换已签收 v0.1.0 的行为契约；修复差异需按新规格中的调查与评审门禁定稿。
 
 ## 4. 系统接口与验收
 

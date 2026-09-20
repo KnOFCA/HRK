@@ -26,6 +26,8 @@ python tools/harmony/harmony_build.py --project src/app/harmony --deveco "<DevEc
 
 ## 阅读入口
 
+下一轮 [v0.1.1 输入可靠性文档](specs/product/input-reliability/spec.md) 已建立草案，覆盖 LI-001～LI-004；仅完成文档规划，尚未编码、测试或验收。
+
 | 内容 | 文档 |
 |---|---|
 | 开发协议 | [AGENTS](AGENTS.md)、[agent](agent.md)、[贡献指南](CONTRIBUTING.md) |

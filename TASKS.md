@@ -19,6 +19,8 @@
 
 ## 后续优先整改：LateInput（P1，下一迭代优先）
 
+v0.1.1 配套文档已建立：[规格](specs/product/input-reliability/spec.md)、[设计](specs/product/input-reliability/design.md)、[任务](specs/product/input-reliability/tasks.md)、[测试计划](specs/product/input-reliability/test-plan.md)、[验证记录](specs/product/input-reliability/validation.md)、[根因调查报告](specs/product/input-reliability/root-cause.md)。2026-09-20 用户仅授权文档编写，明确不编码、不测试；下列整改项仍为 TODO，未实施或验收。
+
 用户本轮明确要求登记；不计入 v0.1.0 新增功能实现。
 
 | 工作项 | 调查与完成条件 | 状态 |

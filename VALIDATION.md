@@ -1,5 +1,7 @@
 # HRK v0.1.0 验证记录
 
+后续 v0.1.1 目前仅编写配套文档，实现 NotStarted、验证 NotRun；独立状态见 [v0.1.1 验证记录](specs/product/input-reliability/validation.md)。下文所有历史 PASS 均不作为 v0.1.1 的验证结论。
+
 2026-09-20 结果：**PASS**。实现 Complete，验收 Accepted，未对外发布。用户于 2026-09-19 授权完成迭代，2026-09-20 明确要求移除真机后使用 DevEco Studio 模拟器继续。
 
 ## 用户签收授权与交付执行

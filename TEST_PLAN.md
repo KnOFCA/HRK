@@ -1,5 +1,9 @@
 # HRK 测试策略
 
+## v0.1.1 规划
+
+输入可靠性与 LI-001～LI-004 的回归范围见 [测试计划](specs/product/input-reliability/test-plan.md)，通过条件见 [规格](specs/product/input-reliability/spec.md)。本轮仅编写文档，按用户明确限制不编码、不执行任何测试或治理检查；本迭代验证状态 NotRun。
+
 ## 文档迁移验收
 
 1. 原始需求、旧文档及已有证据保留快照并校验 SHA-256；迁移不丢失原 TC 编号。

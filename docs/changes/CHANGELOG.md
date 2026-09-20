@@ -1,5 +1,11 @@
 # 变更记录
 
+## 2026-09-20 v0.1.1 配套文档草案（未实现）
+
+- 新增 [输入可靠性五件套](../../specs/product/input-reliability/spec.md) 与根因调查报告框架，规划 LI-001～LI-004。
+- 定义原始轨迹、调查与修复评审门禁、影响评估及真机/Headless回归计划，更新系统导航。
+- 按用户要求仅编辑文档；未编码、未运行构建/测试/治理检查，未创建验证证据或签收。规格 Draft、审批 Pending、实现 NotStarted、验证 NotRun、发布 NotAccepted。
+
 ## 2026-09-20 host CI 夹具修复
 
 - 固定测试谱面 CRLF 检出，修复 Linux 上谱面原始字节哈希与既有 Replay 不一致导致的 CTest 失败。
