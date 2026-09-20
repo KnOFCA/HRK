@@ -81,3 +81,13 @@ python tools/archive-validation.py --device-results build/device/acceptance-resu
 - Linux ASan / UBSan CI 已配置但本轮未执行；Windows 内存采样与热路径分配检查已执行通过。
 
 历史文档迁移和旧实现证据不作为当前产品 PASS 的依据。
+
+## 2026-09-20 host CI 夹具修复（本地验证）
+
+- 失败基线：`1b59cfb48ca4cb4673c9ae3f683e4ef1fee4cf9a`，GitHub [run 35501009060](https://github.com/KnOFCA/HRK/actions/runs/35501009060)。配置、构建通过；CTest 报告 79 PASS / 12 FAIL，CLI 报 `ReplayChartMismatch`。此前 nothrow 分配回归已经 PASS。
+- 原因：`simple_sequence.json` 的 Git 索引为 100 字节 LF，FNV-1a 为 `0da1f5ef330089a7`；工作区 CRLF 为 101 字节，哈希 `2ab45073a9e12c4c`，与 `mixed.replay` 头相同。Linux 检出 LF 破坏了既有夹具的字节绑定。
+- 修复：`.gitattributes` 对测试谱面声明 `text eol=crlf`，保留既有 Replay 和原始字节哈希契约。
+- 回归：用 `git -c core.autocrlf=false/true checkout-index --force --prefix=build/ci-checkout-<mode>/ -- tests/data/charts/simple_sequence.json tests/data/replay/mixed.replay` 分别检出；Node 计算 FNV-1a 并与 Replay 头对比，两者 PASS。两份检出输入调用 `build/host/Debug/hrk_headless.exe`，完整 JSON 与 `tests/expected/mixed_result.json` 相等。另用 `git show HEAD:tests/data/charts/simple_sequence.json` 复现原 LF 哈希不匹配。
+- `cmake --build build/host --config Debug -j 8`：PASS；`ctest --test-dir build/host -C Debug --output-on-failure`：3/3 PASS。
+- Git Bash 补齐 `/usr/bin:/bin` 的 PATH 后执行 `bash tools/sdd/check.sh`：PASS，123 链接、22 验证器测试、43 必需输入，FAIL=0 / BLOCKED=0。首次调用因本机 PATH 缺失 `dirname` 失败，修正调用环境后通过，未修改检查脚本。
+- 本条为未提交工作区的本地修复验证，不覆盖既有正式产品验收证据。远程 Linux ASan/UBSan 尚未重跑，不声明远程 PASS。

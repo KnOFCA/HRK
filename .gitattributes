@@ -3,6 +3,9 @@
 *.mjs text eol=lf
 *.md text eol=lf
 
+# Replay fixtures hash the original chart bytes, including CRLF line endings.
+tests/data/charts/*.json text eol=crlf
+
 # Preserve byte-exact archived evidence and historical source snapshots.
 evidence/** -text
 docs/archive/** -text

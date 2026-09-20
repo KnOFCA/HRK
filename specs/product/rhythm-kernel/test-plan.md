@@ -35,3 +35,9 @@
 首次远程运行配置和构建成功，但 CTest 返回8，SDD步骤未执行。保留ASan/UBSan与失败门槛，先将测试错误摘要发布为工作流annotation以便审查，再按实际诊断修复；Windows和Harmony既有证据不替代此Linux结果。
 
 根因已由远程 ASan 堆栈确认：测试分配器缺失 nothrow new/delete 配对，libstdc++ stable_sort 临时缓冲分配被错误地与 free 配对。补齐标量/数组 nothrow 重载，新增 REG-NOTHROW-ALLOCATION 检查计数和释放，并保留所有 sanitizer 检查。产品源码与 HAP 不变。
+
+### 2026-09-20 Replay 夹具跨平台检出修复
+
+用户授权修复 `HRK host validation - master`。依据 spec 的序列化与边界契约（REQ-005：chartHash 对原始字节计算），本次为测试夹具配置修复，不变更产品规格或哈希算法。审查确认：既有 Replay 绑定 CRLF 谱面；Git 索引为 LF，Linux 检出导致不匹配。
+
+任务：在 `.gitattributes` 固定 `tests/data/charts/*.json` 为 CRLF；分别以 `core.autocrlf=false/true` 检出夹具，验证字节及 Replay 头哈希一致，运行 Headless 完整结果比对；重新构建并运行全部 CTest、SDD 检查。继续启用 CI ASan/UBSan，远程结果单独记录，不以 Windows 测试代替 Linux sanitizer。
