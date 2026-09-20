@@ -1,0 +1,42 @@
+[
+  {
+    "path": "docs/ARCHITECTURE.md",
+    "sha256": "86730e5bff0aaaf5d76decf73e2cd5410886c29e80765a0fbd4fbafbd684c777"
+  },
+  {
+    "path": "docs/DEVICE_ACCEPTANCE.md",
+    "sha256": "c6b973cab97f945b1e78a73cfbc27f54d2bcc80aacad3742bfe4a4c481be3dd4"
+  },
+  {
+    "path": "docs/evidence/mingw-ctest.log",
+    "sha256": "9cd526d005b7f01cca7941d306b3dc24e3a2c03d48b79bd2ab54250fd8a57657"
+  },
+  {
+    "path": "docs/evidence/msvc-ctest.xml",
+    "sha256": "4e3a7faccb9b3e51f05b9a7dd00b2fcadec48f5ce212cd89fcf6ddaa36a042b0"
+  },
+  {
+    "path": "docs/evidence/software-validation.json",
+    "sha256": "a575fb3d22024dd119b942f4a4aab29c356ad7cc18627aa1be6849b8bbf664b6"
+  },
+  {
+    "path": "docs/OPEN_SOURCE.md",
+    "sha256": "8b856f8189b7d9fcd794332b3f0140c99c14973a74382decdb3c4847906f2908"
+  },
+  {
+    "path": "docs/VALIDATION_v0.1.0.md",
+    "sha256": "b9a0bd0cd94ef28282514afebcc86e344095f82402d5ab1123969b639e79ceb2"
+  },
+  {
+    "path": "README-original.md",
+    "sha256": "358e0b222576082ef63bc5f49592558fb8f97b1a6a7597437f4fc812e8b7aa9d"
+  },
+  {
+    "path": "require_describe/v0.1.0/Harmony Rhythm Kernel v0.1.0 最小迭代原型规格说明书.md",
+    "sha256": "05977404458381125c367c50342ced785d62e5d720739c14b780caf8b1a472eb"
+  },
+  {
+    "path": "require_describe/v0.1.0/Harmony Rhythm Kernel v0.1.0 测试与验收说明.md",
+    "sha256": "ac0582cb3f3dc198d090711dae84405df19da0daf107f3516c97a486b6f48ef1"
+  }
+]

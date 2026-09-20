@@ -1,0 +1,627 @@
+{
+  "TC-BASE-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-BASE-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-BASE-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-006": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-007": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TIME-008": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TL-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TL-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TL-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TL-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-TL-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-CHART-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-CHART-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-CHART-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-CHART-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-006": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-IN-007": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-006": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-007": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-008": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-JUDGE-009": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-SCORE-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-SCORE-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-SCORE-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-GAME-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-GAME-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-GAME-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-GAME-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-006": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUDIO-007": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REP-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REP-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REP-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REP-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REP-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DET-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DET-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DET-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DET-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DET-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-AUTO-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REN-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REN-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-HEAD-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-HEAD-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-HEAD-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-RES-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-RES-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DIAG-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DIAG-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-DIAG-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-STAB-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-STAB-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-STAB-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-PERF-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ERR-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ERR-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ERR-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-RT-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-MEM-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-MEM-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ARCH-001": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ARCH-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ARCH-003": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ARCH-004": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-ARCH-005": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-REN-002": {
+    "status": "PASS",
+    "method": "automated host",
+    "evidence": "host-results.json"
+  },
+  "TC-BUILD-001": {
+    "status": "PASS",
+    "method": "MSVC Debug build; targets linked independently per CMake graph",
+    "evidence": "host-results.json; CMakeLists.txt"
+  },
+  "TC-BUILD-002": {
+    "status": "PASS",
+    "method": "MSVC Debug build; targets linked independently per CMake graph",
+    "evidence": "host-results.json; CMakeLists.txt"
+  },
+  "TC-BUILD-004": {
+    "status": "PASS",
+    "method": "MSVC Debug build; targets linked independently per CMake graph",
+    "evidence": "host-results.json; CMakeLists.txt"
+  },
+  "TC-BUILD-003": {
+    "status": "PASS",
+    "method": "Hvigor signed HAP with arm64-v8a and x86_64 shared libraries; emulator installation successful",
+    "evidence": "harmony-build.txt"
+  },
+  "TC-HAR-001": {
+    "status": "PASS",
+    "method": "Physical device rendered clear screen and moving notes; emulator Native Ok and successful surface metrics",
+    "evidence": "screen.png; emulator-lifecycle-metrics.json"
+  },
+  "TC-HAR-002": {
+    "status": "PASS",
+    "method": "Physical device rendered clear screen and moving notes; emulator Native Ok and successful surface metrics",
+    "evidence": "screen.png; emulator-lifecycle-metrics.json"
+  },
+  "TC-HAR-003": {
+    "status": "PASS",
+    "method": "Physical device rendered clear screen and moving notes; emulator Native Ok and successful surface metrics",
+    "evidence": "screen.png; emulator-lifecycle-metrics.json"
+  },
+  "TC-HAR-004": {
+    "status": "PASS",
+    "method": "User confirmed physical rotation; emulator destroy/recreate and resize preserve song position, no crash",
+    "evidence": "emulator-lifecycle-assertions.json; emulator-lifecycle-metrics.json"
+  },
+  "TC-LIFE-003": {
+    "status": "PASS",
+    "method": "User confirmed physical rotation; emulator destroy/recreate and resize preserve song position, no crash",
+    "evidence": "emulator-lifecycle-assertions.json; emulator-lifecycle-metrics.json"
+  },
+  "TC-LIFE-004": {
+    "status": "PASS",
+    "method": "User confirmed physical rotation; emulator destroy/recreate and resize preserve song position, no crash",
+    "evidence": "emulator-lifecycle-assertions.json; emulator-lifecycle-metrics.json"
+  },
+  "TC-HAR-IN-001": {
+    "status": "PASS",
+    "method": "56 physical finger events exported; full sequence equals Headless. Additional emulator native injected stream: 88 events",
+    "evidence": "physical-fixed.replay; physical-fixed-result.json; physical-fixed-headless.json; emulator-input-assertions.json"
+  },
+  "TC-HAR-IN-002": {
+    "status": "PASS",
+    "method": "56 physical finger events exported; full sequence equals Headless. Additional emulator native injected stream: 88 events",
+    "evidence": "physical-fixed.replay; physical-fixed-result.json; physical-fixed-headless.json; emulator-input-assertions.json"
+  },
+  "TC-HAR-IN-003": {
+    "status": "PASS",
+    "method": "56 physical finger events exported; full sequence equals Headless. Additional emulator native injected stream: 88 events",
+    "evidence": "physical-fixed.replay; physical-fixed-result.json; physical-fixed-headless.json; emulator-input-assertions.json"
+  },
+  "TC-E2E-001": {
+    "status": "PASS",
+    "method": "56 physical finger events exported; full sequence equals Headless. Additional emulator native injected stream: 88 events",
+    "evidence": "physical-fixed.replay; physical-fixed-result.json; physical-fixed-headless.json; emulator-input-assertions.json"
+  },
+  "TC-E2E-004": {
+    "status": "PASS",
+    "method": "56 physical finger events exported; full sequence equals Headless. Additional emulator native injected stream: 88 events",
+    "evidence": "physical-fixed.replay; physical-fixed-result.json; physical-fixed-headless.json; emulator-input-assertions.json"
+  },
+  "TC-E2E-005": {
+    "status": "PASS",
+    "method": "56 physical finger events exported; full sequence equals Headless. Additional emulator native injected stream: 88 events",
+    "evidence": "physical-fixed.replay; physical-fixed-result.json; physical-fixed-headless.json; emulator-input-assertions.json"
+  },
+  "TC-HAR-IN-004": {
+    "status": "PASS",
+    "method": "Emulator platform uinput two-finger gesture reaches native XComponent; pointer IDs 0 and 1 independently recorded",
+    "evidence": "emulator-input.replay; emulator-input-assertions.json"
+  },
+  "TC-HAR-IN-005": {
+    "status": "PASS",
+    "method": "Source review: DOWN/UP event.timeStamp and MOVE touchPoints[].timeStamp; original monotonic clock mapped to audio time",
+    "evidence": "src/platform/harmony/backend.cpp; physical-fixed.replay"
+  },
+  "TC-HAR-AUD-001": {
+    "status": "PASS",
+    "method": "User physical test confirmation: 声音正常; OHAudio clock advances on both targets",
+    "evidence": "physical-fixed-layout.json; emulator-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-002": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-003": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-004": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-005": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-E2E-006": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-E2E-007": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-LIFE-001": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-LIFE-002": {
+    "status": "PASS",
+    "method": "Actual OHAudio position: pause 5.158s unchanged after 2s; resume 6.331s; seek 4.000s; background/foreground freeze 4.221s",
+    "evidence": "emulator-lifecycle-assertions.json"
+  },
+  "TC-HAR-FRAME-001": {
+    "status": "PASS",
+    "method": "3590 observed intervals in 60.0027 seconds",
+    "evidence": "emulator-perf60-isolated-metrics.json"
+  },
+  "TC-HAR-FRAME-002": {
+    "status": "PASS",
+    "method": "Source review: audio callback memset/memcpy/atomics only; frame callback has no parse, decode, blocking IO; control mutex try_lock",
+    "evidence": "src/platform/harmony/backend.cpp; src/platform/harmony/entry.cpp"
+  },
+  "TC-RT-001": {
+    "status": "PASS",
+    "method": "Source review: audio callback memset/memcpy/atomics only; frame callback has no parse, decode, blocking IO; control mutex try_lock",
+    "evidence": "src/platform/harmony/backend.cpp; src/platform/harmony/entry.cpp"
+  },
+  "TC-HAR-FRAME-003": {
+    "status": "PASS",
+    "method": "Same auto replay at requested 60/120 Hz gives identical 124 PERFECT result. Actual emulator remains 60 Hz; host separately covers 120 Hz determinism",
+    "evidence": "emulator-perf60-isolated-result.json; emulator-perf120-result.json; host-results.json"
+  },
+  "TC-E2E-002": {
+    "status": "PASS",
+    "method": "Platform-injected native touch at note time produces 1 PERFECT, remaining 3 MISS; full replay equality",
+    "evidence": "emulator-input-result.json; emulator-input-headless.json"
+  },
+  "TC-E2E-003": {
+    "status": "PASS",
+    "method": "Platform-injected native touch at note time produces 1 PERFECT, remaining 3 MISS; full replay equality",
+    "evidence": "emulator-input-result.json; emulator-input-headless.json"
+  },
+  "TC-BACKEND-001": {
+    "status": "PASS",
+    "method": "Same hrk_game_reference CMake target used by both composition roots, no platform/game dependency",
+    "evidence": "CMakeLists.txt; host-results.json"
+  },
+  "TC-BACKEND-002": {
+    "status": "PASS",
+    "method": "Same original chart bytes; mixed replay complete JSON is 3 PERFECT/1 MISS/300 on both backends",
+    "evidence": "emulator-mixed-result.json; mixed-device-headless.json; host-results.json"
+  },
+  "TC-BACKEND-003": {
+    "status": "PASS",
+    "method": "Same original chart bytes; mixed replay complete JSON is 3 PERFECT/1 MISS/300 on both backends",
+    "evidence": "emulator-mixed-result.json; mixed-device-headless.json; host-results.json"
+  },
+  "TC-PERF-001": {
+    "status": "PASS",
+    "method": "Final isolated simulator measurement with no concurrent host search/build: p95 16.6744ms, minimum 57fps, 60.0027 seconds",
+    "evidence": "emulator-perf60-isolated-metrics.json"
+  },
+  "TC-PERF-002": {
+    "status": "UNSUPPORTED_DEVICE",
+    "method": "120Hz request accepted but simulator measured ~60Hz; earlier physical device measured ~90Hz. No 120Hz runtime available in tested configurations",
+    "evidence": "emulator-perf120-metrics.json; perf120-metrics.json"
+  }
+}

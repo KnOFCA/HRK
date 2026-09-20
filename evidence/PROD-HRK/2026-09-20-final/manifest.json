@@ -1,0 +1,566 @@
+{
+  "feature_id": "PROD-HRK",
+  "run_id": "2026-09-20-final",
+  "timestamp_utc": "2026-09-20T00:40:51.437499+00:00",
+  "environment": {
+    "host": "Windows-11-10.0.26200-SP0",
+    "compiler": "MSVC 19.44.35228 (Debug); Harmony SDK Clang 15.0.4",
+    "physical_device": "MRO-W00 / OpenHarmony-6.1.1.120 (removed before final iteration)",
+    "emulator": "DevEco MatePad Pro 12 / OpenHarmony-6.1.1.125 / x86_64 / 2800x1840, surface2728x806",
+    "performance_target": "emulator; actual 60Hz"
+  },
+  "specification_revision": "sha256:12d199698420d301ee37b5caf61d046ae3956fe2749329875944d90bbb5fd35c",
+  "design_revision": "sha256:8e83d49ea375b57d311b2648bf195b8ce00c15a49165ea93ebd73470ee60a0b1",
+  "implementation_commit": null,
+  "implementation_revision": "sha256:75d246439e08a282101d1aecc8cbae629b5f40cab9d01cd9a9dadbcd5285e8f9",
+  "validator_commit": null,
+  "validator_revision": "sha256:0eabd4a21eab3236c24150c9ebc031aac00e18d4d06deaa4cd891994c05d1cf9",
+  "validation_commit": null,
+  "validation_ref": null,
+  "revision_note": "Uncommitted working tree; exact content hashes recorded. No commit or release tag claimed. Local signing material is intentionally excluded.",
+  "commands": [
+    {
+      "argv": [
+        "build/host/Debug/hrk_tests.exe"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "tools/check-architecture.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "tools/check-headless.mjs",
+        "D:\\Source\\harmonyOSAPP\\HRK\\build\\host\\Debug\\hrk_headless.exe"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "cmake",
+        "--build",
+        "build/host",
+        "--config",
+        "Debug",
+        "-j",
+        "8"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "ctest",
+        "--test-dir",
+        "build/host",
+        "-C",
+        "Debug",
+        "--output-on-failure"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "tools/harmony/harmony_build.py",
+        "--project",
+        "src/app/harmony",
+        "--deveco",
+        "D:/ophm/DevEco Studio",
+        "--no-repair-links",
+        "--skip-install"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "hdc",
+        "install",
+        "-r",
+        "src/app/harmony/entry/build/default/outputs/default/entry-default-signed.hap"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "tools/test-device-input.py",
+        "--hdc",
+        "D:/ophm/DevEco Studio/sdk/default/openharmony/toolchains/hdc.exe"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "tools/test-device-lifecycle.py",
+        "--hdc",
+        "D:/ophm/DevEco Studio/sdk/default/openharmony/toolchains/hdc.exe"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "tools/device-test.py",
+        "--hdc",
+        "D:/ophm/DevEco Studio/sdk/default/openharmony/toolchains/hdc.exe",
+        "export",
+        "emulator-perf60-isolated"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "-c",
+        "export PATH=\"/usr/bin:/bin:$PATH\"; bash tools/sdd/check.sh"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "acceptance_results": "acceptance-results.json",
+  "overall": "PASS",
+  "artifacts": [
+    {
+      "path": "build/artifacts/hrk-v0.1.0-device-tested.hap",
+      "sha256": "2f91302b795c5cb6af52ff8467b57875b8132126fccb2c271086e373a94e5236",
+      "bytes": 17473662
+    },
+    {
+      "path": "build/artifacts/libhrk_entry-arm64-v8a.so",
+      "sha256": "725c3a8f10e15d1e61e7145fbaf3bb6222368a3a5e863c28dc04429a77b239ed",
+      "bytes": 469400
+    },
+    {
+      "path": "build/artifacts/libhrk_entry-x86_64.so",
+      "sha256": "1d253edfa11d681016772d26d8a3cbe7d338de90222435714d8de94d8d251584",
+      "bytes": 468968
+    },
+    {
+      "path": "build/device/emulator-input-after-layout.json",
+      "sha256": "0d76b45a0e3144a5dbb1a59e0e83e040fcfa180fa4792bcf399d6edb4c30507c",
+      "bytes": 20562,
+      "archived_path": "emulator-input-after-layout.json"
+    },
+    {
+      "path": "build/device/emulator-input-assertions.json",
+      "sha256": "d34a645c34079d2a73d83ce54ad40b8fe29ffa56207d91d5b4ec90bce8fa5391",
+      "bytes": 145,
+      "archived_path": "emulator-input-assertions.json"
+    },
+    {
+      "path": "build/device/emulator-input-before-layout.json",
+      "sha256": "d5f9da0489112bd149f8b2bb2e4a01b94c2bfa277ee114be7cf895847c6a98fa",
+      "bytes": 20494,
+      "archived_path": "emulator-input-before-layout.json"
+    },
+    {
+      "path": "build/device/emulator-input-headless.json",
+      "sha256": "06209241e1f9705bdfba46f751eba7d5dcbc92fed5c5fe66a4b791fb6d6d0b80",
+      "bytes": 376,
+      "archived_path": "emulator-input-headless.json"
+    },
+    {
+      "path": "build/device/emulator-input-metrics.json",
+      "sha256": "82bd5312682db5e39920ce60a8f230ec26d85b5ffa736c653911f6e8141a913f",
+      "bytes": 407,
+      "archived_path": "emulator-input-metrics.json"
+    },
+    {
+      "path": "build/device/emulator-input-result.json",
+      "sha256": "fbdfa0ab64ca1c415f7eac0b1dcbdbad809b11b27a0eec83e985e5e269695e1d",
+      "bytes": 374,
+      "archived_path": "emulator-input-result.json"
+    },
+    {
+      "path": "build/device/emulator-input.replay",
+      "sha256": "7d1057817476a8f0aca7359b65c2818fd749b557cbd31e38189d5c0c9deac85f",
+      "bytes": 2144,
+      "archived_path": "emulator-input.replay"
+    },
+    {
+      "path": "build/device/emulator-lifecycle-assertions.json",
+      "sha256": "64ce69368c0851bed642685e4c8b30fc4e2064135402ae727fec1a3d38658fc5",
+      "bytes": 204,
+      "archived_path": "emulator-lifecycle-assertions.json"
+    },
+    {
+      "path": "build/device/emulator-lifecycle-controls-layout.json",
+      "sha256": "d5f9da0489112bd149f8b2bb2e4a01b94c2bfa277ee114be7cf895847c6a98fa",
+      "bytes": 20494,
+      "archived_path": "emulator-lifecycle-controls-layout.json"
+    },
+    {
+      "path": "build/device/emulator-lifecycle-metrics.json",
+      "sha256": "2901ae99961cb199a4c4b2a604c4f9fb0ec4a98359dd3aa9c18bd56a06b8c786",
+      "bytes": 326,
+      "archived_path": "emulator-lifecycle-metrics.json"
+    },
+    {
+      "path": "build/device/emulator-lifecycle-result.json",
+      "sha256": "0992d822e155ce9791f3a86a9bd76c55b24f3e10948cf2b228506e2dc8fa21c9",
+      "bytes": 346,
+      "archived_path": "emulator-lifecycle-result.json"
+    },
+    {
+      "path": "build/device/emulator-lifecycle.replay",
+      "sha256": "7db48d258637e53f3cf7718f14c5e25a7eba47099eede4e40504b20971134712",
+      "bytes": 224,
+      "archived_path": "emulator-lifecycle.replay"
+    },
+    {
+      "path": "build/device/emulator-mixed-metrics.json",
+      "sha256": "5d741a61a44b4a68a16c561aee652b51f5046ed19077a4f67551ae0d563e63b5",
+      "bytes": 326,
+      "archived_path": "emulator-mixed-metrics.json"
+    },
+    {
+      "path": "build/device/emulator-mixed-result.json",
+      "sha256": "92d606fb34241ccb4225cd11f0f1beef582d009e470aefd4713aebd59b513e3a",
+      "bytes": 368,
+      "archived_path": "emulator-mixed-result.json"
+    },
+    {
+      "path": "build/device/emulator-mixed.replay",
+      "sha256": "5b4e6660a4f6dfcab2dbf06060ddc153513e3e959c60315c0a0fad5bccfa3dd8",
+      "bytes": 104,
+      "archived_path": "emulator-mixed.replay"
+    },
+    {
+      "path": "build/device/emulator-perf120-metrics.json",
+      "sha256": "9de64941165d1c62d399eb6009c65aa744edcef8cfd21fe9d0cb1bcfab83ab7a",
+      "bytes": 407,
+      "archived_path": "emulator-perf120-metrics.json"
+    },
+    {
+      "path": "build/device/emulator-perf120-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700,
+      "archived_path": "emulator-perf120-result.json"
+    },
+    {
+      "path": "build/device/emulator-perf120.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984,
+      "archived_path": "emulator-perf120.replay"
+    },
+    {
+      "path": "build/device/emulator-perf60-isolated-metrics.json",
+      "sha256": "6a076aee40cfbc525b6a65c3b6e3a71a09709d9442ffc1ae61e8723acabca1fa",
+      "bytes": 407,
+      "archived_path": "emulator-perf60-isolated-metrics.json"
+    },
+    {
+      "path": "build/device/emulator-perf60-isolated-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700,
+      "archived_path": "emulator-perf60-isolated-result.json"
+    },
+    {
+      "path": "build/device/emulator-perf60-isolated.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984,
+      "archived_path": "emulator-perf60-isolated.replay"
+    },
+    {
+      "path": "build/device/emulator-perf60-metrics.json",
+      "sha256": "82bd5312682db5e39920ce60a8f230ec26d85b5ffa736c653911f6e8141a913f",
+      "bytes": 407,
+      "archived_path": "emulator-perf60-metrics.json"
+    },
+    {
+      "path": "build/device/emulator-perf60-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700,
+      "archived_path": "emulator-perf60-result.json"
+    },
+    {
+      "path": "build/device/emulator-perf60.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984,
+      "archived_path": "emulator-perf60.replay"
+    },
+    {
+      "path": "build/device/mixed-device-headless.json",
+      "sha256": "c035e653ea873148cda430063779d396b2ef91e32965a43692f66d371c521fba",
+      "bytes": 370,
+      "archived_path": "mixed-device-headless.json"
+    },
+    {
+      "path": "build/device/mixed-device-metrics.json",
+      "sha256": "21c085036636bba9aa31d2c038b1c69ae00de6ba956369193ac65cfa8cfa7e7a",
+      "bytes": 178,
+      "archived_path": "mixed-device-metrics.json"
+    },
+    {
+      "path": "build/device/mixed-device-result.json",
+      "sha256": "92d606fb34241ccb4225cd11f0f1beef582d009e470aefd4713aebd59b513e3a",
+      "bytes": 368,
+      "archived_path": "mixed-device-result.json"
+    },
+    {
+      "path": "build/device/mixed-device.replay",
+      "sha256": "5b4e6660a4f6dfcab2dbf06060ddc153513e3e959c60315c0a0fad5bccfa3dd8",
+      "bytes": 104,
+      "archived_path": "mixed-device.replay"
+    },
+    {
+      "path": "build/device/perf120-metrics.json",
+      "sha256": "b6883b3d444c062b6483944687d88c985898b9e7e661828879019f8a909ec809",
+      "bytes": 191,
+      "archived_path": "perf120-metrics.json"
+    },
+    {
+      "path": "build/device/perf120-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700,
+      "archived_path": "perf120-result.json"
+    },
+    {
+      "path": "build/device/perf120.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984,
+      "archived_path": "perf120.replay"
+    },
+    {
+      "path": "build/device/perf60-fixed-metrics.json",
+      "sha256": "52ba4fdeae8d20eba2d5ae15f73535e157e3498bfd51035a77979be2269ac748",
+      "bytes": 407,
+      "archived_path": "perf60-fixed-metrics.json"
+    },
+    {
+      "path": "build/device/perf60-fixed-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700,
+      "archived_path": "perf60-fixed-result.json"
+    },
+    {
+      "path": "build/device/perf60-fixed.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984,
+      "archived_path": "perf60-fixed.replay"
+    },
+    {
+      "path": "build/device/physical-fixed-headless.json",
+      "sha256": "32d2c51ded97f8f5ec253209b1beecc4bb6fe070ce4682531dddee543fc671fc",
+      "bytes": 374,
+      "archived_path": "physical-fixed-headless.json"
+    },
+    {
+      "path": "build/device/physical-fixed-layout.json",
+      "sha256": "bf30113a289a13bd42a2f55e222e11aae087e172004214a85a6e05f5051eea39",
+      "bytes": 20219,
+      "archived_path": "physical-fixed-layout.json"
+    },
+    {
+      "path": "build/device/physical-fixed-result.json",
+      "sha256": "7380dc2a67c87d249e0d8e92c55e3387d689df69940a55fe98d0a12b4e4dd8cc",
+      "bytes": 372,
+      "archived_path": "physical-fixed-result.json"
+    },
+    {
+      "path": "build/device/physical-fixed.replay",
+      "sha256": "a54f9ad1380687111e071852afa408ceb3d337b628cd48ef7af2ccdd448526b3",
+      "bytes": 1376,
+      "archived_path": "physical-fixed.replay"
+    },
+    {
+      "path": "build/device/screen.png",
+      "sha256": "88c41649a802060f291583e723ff83d3638d88d9a265c43bafcb2c95008c02f2",
+      "bytes": 232078,
+      "archived_path": "screen.png"
+    },
+    {
+      "path": "build/harmony-build.txt",
+      "sha256": "4e9cf46c1401e01fdc0f7215abc03428e8ddabcf9928f18ccb17e59470407390",
+      "bytes": 3399,
+      "archived_path": "harmony-build.txt"
+    }
+  ],
+  "notes": [
+    "2026-09-20 user explicitly requested continuing with DevEco emulator after removing physical device. Final performance acceptance target is emulator; no final physical performance PASS claimed.",
+    "Physical user confirmations: sound normal; fixed touch count normal; rotation normal. Deliberately late hits are MISS; LateInput reports delivery past committed watermark.",
+    "Physical pre-fix LateInput rejection reproduced and fixed by 40ms delivery grace without widening 50ms judgment window.",
+    "Emulator injected stream includes 15 events rejected beyond delivery watermark, 88 recorded. Preserved events reproduce exactly; emulator injection latency is not physical timing evidence.",
+    "Initial performance probes failed minimum FPS (physical 17; emulator 44/45). Final isolated run passed 57; earlier probes retained, not rewritten. Emulator shares host CPU/GPU; do not run build/search concurrently with benchmark.",
+    "120Hz unsupported by measured test configurations; permitted conditional acceptance. Not a claim about maximum physical panel capability.",
+    "Hvigor full prebuild warns for valid version 0.1.0: installed validator regex requires nonzero major. Version preserved; no compiler warnings and final incremental build succeeds. Linux sanitizer CI configured but not executed in this Windows session.",
+    "Final signed HAP includes ARM64 and x86_64. Final HAP exercised on emulator; earlier ARM64 physical evidence predates benchmark scheduling/frame-range diagnostics changes. Not externally published; no git commit or tag fabricated."
+  ],
+  "acceptance_criteria": {
+    "PROD-HRK-AC-001": {
+      "status": "PASS",
+      "cases": [
+        "TC-HEAD-001",
+        "TC-HEAD-002",
+        "TC-HEAD-003",
+        "TC-ARCH-001",
+        "TC-ARCH-002",
+        "TC-ARCH-003",
+        "TC-ARCH-004",
+        "TC-ARCH-005",
+        "TC-BUILD-001",
+        "TC-BUILD-002",
+        "TC-BUILD-004",
+        "TC-BUILD-003",
+        "TC-BACKEND-001",
+        "TC-BACKEND-002",
+        "TC-BACKEND-003"
+      ]
+    },
+    "PROD-HRK-AC-002": {
+      "status": "PASS",
+      "cases": [
+        "TC-BASE-001",
+        "TC-BASE-002",
+        "TC-BASE-003",
+        "TC-TIME-001",
+        "TC-TIME-002",
+        "TC-TIME-003",
+        "TC-TIME-004",
+        "TC-TIME-005",
+        "TC-TIME-006",
+        "TC-TIME-007",
+        "TC-TIME-008",
+        "TC-TL-001",
+        "TC-TL-002",
+        "TC-TL-003",
+        "TC-TL-004",
+        "TC-TL-005"
+      ]
+    },
+    "PROD-HRK-AC-003": {
+      "status": "PASS",
+      "cases": [
+        "TC-IN-001",
+        "TC-IN-002",
+        "TC-IN-003",
+        "TC-IN-004",
+        "TC-IN-005",
+        "TC-IN-006",
+        "TC-IN-007",
+        "TC-AUDIO-001",
+        "TC-AUDIO-002",
+        "TC-AUDIO-003",
+        "TC-AUDIO-004",
+        "TC-AUDIO-005",
+        "TC-AUDIO-006",
+        "TC-AUDIO-007",
+        "TC-RT-002",
+        "TC-RT-001"
+      ]
+    },
+    "PROD-HRK-AC-004": {
+      "status": "PASS",
+      "cases": [
+        "TC-CHART-001",
+        "TC-CHART-002",
+        "TC-CHART-003",
+        "TC-CHART-004",
+        "TC-JUDGE-001",
+        "TC-JUDGE-002",
+        "TC-JUDGE-003",
+        "TC-JUDGE-004",
+        "TC-JUDGE-005",
+        "TC-JUDGE-006",
+        "TC-JUDGE-007",
+        "TC-JUDGE-008",
+        "TC-JUDGE-009",
+        "TC-SCORE-001",
+        "TC-SCORE-002",
+        "TC-SCORE-003",
+        "TC-GAME-001",
+        "TC-GAME-002",
+        "TC-GAME-003",
+        "TC-GAME-004",
+        "TC-AUTO-001"
+      ]
+    },
+    "PROD-HRK-AC-005": {
+      "status": "PASS",
+      "cases": [
+        "TC-REP-001",
+        "TC-REP-002",
+        "TC-REP-003",
+        "TC-REP-004",
+        "TC-REP-005",
+        "TC-DET-001",
+        "TC-DET-002",
+        "TC-DET-003",
+        "TC-DET-004",
+        "TC-DET-005"
+      ]
+    },
+    "PROD-HRK-AC-006": {
+      "status": "PASS",
+      "cases": [
+        "TC-REN-001",
+        "TC-REN-003",
+        "TC-REN-002",
+        "TC-HAR-001",
+        "TC-HAR-002",
+        "TC-HAR-003",
+        "TC-HAR-004",
+        "TC-LIFE-003",
+        "TC-LIFE-004",
+        "TC-HAR-IN-001",
+        "TC-HAR-IN-002",
+        "TC-HAR-IN-003",
+        "TC-E2E-001",
+        "TC-E2E-004",
+        "TC-E2E-005",
+        "TC-HAR-IN-004",
+        "TC-HAR-IN-005",
+        "TC-HAR-AUD-001",
+        "TC-HAR-AUD-002",
+        "TC-HAR-AUD-003",
+        "TC-HAR-AUD-004",
+        "TC-HAR-AUD-005",
+        "TC-E2E-006",
+        "TC-E2E-007",
+        "TC-LIFE-001",
+        "TC-LIFE-002",
+        "TC-HAR-FRAME-001",
+        "TC-HAR-FRAME-002",
+        "TC-HAR-FRAME-003",
+        "TC-E2E-002",
+        "TC-E2E-003"
+      ]
+    },
+    "PROD-HRK-AC-007": {
+      "status": "PASS",
+      "cases": [
+        "TC-RES-001",
+        "TC-RES-002",
+        "TC-DIAG-001",
+        "TC-DIAG-002",
+        "TC-DIAG-003",
+        "TC-STAB-001",
+        "TC-STAB-002",
+        "TC-STAB-003",
+        "TC-PERF-003",
+        "TC-ERR-001",
+        "TC-ERR-002",
+        "TC-ERR-003",
+        "TC-MEM-001",
+        "TC-MEM-002",
+        "TC-PERF-001",
+        "TC-PERF-002"
+      ]
+    }
+  },
+  "governance": {
+    "status": "PASS",
+    "links": 107,
+    "broken_links": 0,
+    "validator_tests": 22,
+    "required_inputs": 43,
+    "fail": 0,
+    "blocked": 0
+  }
+}

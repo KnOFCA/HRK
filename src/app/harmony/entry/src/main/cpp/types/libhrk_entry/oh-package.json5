@@ -1,0 +1,6 @@
+{
+  "name": "libhrk_entry.so",
+  "version": "0.1.0",
+  "description": "HRK Native composition",
+  "types": "./index.d.ts"
+}

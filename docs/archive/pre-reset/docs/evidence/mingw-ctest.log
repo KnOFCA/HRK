@@ -1,0 +1,172 @@
+Start testing: Sep 14 08:43 中国标准时间
+----------------------------------------------------------
+1/10 Testing: hrk_base_tests
+1/10 Test: hrk_base_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "base"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_base_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+base: PASS
+20019 checks passed
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_base_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_base_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: hrk_time_tests
+2/10 Test: hrk_time_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "time"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_time_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+time: PASS
+11 checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_time_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_time_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: hrk_timeline_tests
+3/10 Test: hrk_timeline_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "timeline"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_timeline_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+timeline: PASS
+15 checks passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_timeline_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_timeline_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/10 Testing: hrk_input_tests
+4/10 Test: hrk_input_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "input"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_input_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+input: PASS
+3007 checks passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_input_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_input_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/10 Testing: hrk_audio_tests
+5/10 Test: hrk_audio_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "audio"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_audio_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+audio: PASS
+12 checks passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_audio_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_audio_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/10 Testing: hrk_replay_tests
+6/10 Test: hrk_replay_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "replay"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_replay_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+replay: PASS
+166 checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_replay_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_replay_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/10 Testing: hrk_runtime_tests
+7/10 Test: hrk_runtime_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "runtime"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_runtime_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+runtime: PASS
+17 checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_runtime_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_runtime_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/10 Testing: hrk_reference_game_tests
+8/10 Test: hrk_reference_game_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "reference_game"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_reference_game_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+reference_game: PASS
+25 checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_reference_game_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_reference_game_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/10 Testing: hrk_determinism_tests
+9/10 Test: hrk_determinism_tests
+Command: "D:/Source/harmonyOSAPP/HRK/out/mingw/core/hrk_tests.exe" "determinism"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_determinism_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+determinism: PASS
+853 checks passed
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_determinism_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_determinism_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/10 Testing: hrk_architecture_tests
+10/10 Test: hrk_architecture_tests
+Command: "C:/Python314/python.exe" "D:/Source/harmonyOSAPP/HRK/core/../tools/check_architecture.py"
+Directory: D:/Source/harmonyOSAPP/HRK/out/mingw/core
+"hrk_architecture_tests" start time: Sep 14 08:43 中国标准时间
+Output:
+----------------------------------------------------------
+Architecture boundaries and target dependency graph: PASS
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_architecture_tests" end time: Sep 14 08:43 中国标准时间
+"hrk_architecture_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 14 08:43 中国标准时间

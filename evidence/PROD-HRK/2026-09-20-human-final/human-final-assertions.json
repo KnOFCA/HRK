@@ -1,0 +1,35 @@
+{
+  "perfect": 1,
+  "miss": 3,
+  "score": 100,
+  "events": 1129,
+  "pointerPhases": {
+    "0": [
+      0,
+      1,
+      2
+    ],
+    "1": [
+      0,
+      1,
+      2
+    ]
+  },
+  "peakSimultaneousPointers": 2,
+  "activeAtEnd": [
+    0,
+    1
+  ],
+  "exactHeadless": true,
+  "hud": [
+    "FPS 60 · 输入 1129 · 迟到 17 · 溢出 0",
+    "Native: LateInput"
+  ],
+  "completedDownMoveUpCycles": {
+    "0": 6,
+    "1": 2
+  },
+  "endExplanation": "Final two-finger gesture remained active across song EOF; earlier gestures include complete release for both fingers. Release after EOF is outside recorded song.",
+  "userConfirmation": "保存成功、出现 PERFECT，声音/触摸无异常。",
+  "verification": "PASS for PERFECT, recorded two-pointer DOWN/MOVE/UP cycles and exact Headless equality; 17 late delivery rejects recorded as diagnostic limitation."
+}

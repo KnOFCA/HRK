@@ -1,0 +1,1 @@
+{"score":0,"perfect":0,"miss":4,"judgments":[{"id":1,"type":2,"targetTime":500000000,"inputTime":550000001,"error":50000001},{"id":2,"type":2,"targetTime":1000000000,"inputTime":1050000001,"error":50000001},{"id":3,"type":2,"targetTime":1500000000,"inputTime":1550000001,"error":50000001},{"id":4,"type":2,"targetTime":2000000000,"inputTime":2050000001,"error":50000001}]}

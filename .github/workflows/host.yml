@@ -1,0 +1,14 @@
+name: HRK host validation
+on: [push, pull_request]
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: cmake -S . -B build/ci -G Ninja -DHRK_SANITIZE=ON -DCMAKE_BUILD_TYPE=Debug
+      - run: cmake --build build/ci
+      - run: ctest --test-dir build/ci --output-on-failure
+      - run: bash tools/sdd/check.sh

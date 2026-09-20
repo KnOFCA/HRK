@@ -1,0 +1,161 @@
+{
+  "version": "0.1.0",
+  "utc": "2026-09-14T00:47:09.446661+00:00",
+  "checks": {
+    "configure": {
+      "status": "PASS",
+      "seconds": 0.92,
+      "log": "configure.log"
+    },
+    "host_build": {
+      "status": "PASS",
+      "seconds": 0.778,
+      "log": "host_build.log"
+    },
+    "ctest": {
+      "status": "PASS",
+      "seconds": 0.327,
+      "log": "ctest.log"
+    },
+    "golden_replay": {
+      "status": "PASS",
+      "seconds": 0.127,
+      "log": "golden_replay.log"
+    },
+    "harmony_hap": {
+      "status": "PASS",
+      "seconds": 4.366,
+      "log": "harmony_hap.log"
+    }
+  },
+  "device": "NOT_RUN",
+  "releaseReady": false,
+  "hap": {
+    "path": "app\\harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
+    "sha256": "85befabc5aa40a829ac3eccc2537fdfc23456b1e83a0a4074dfa014b0ac03ca7",
+    "signed": false
+  },
+  "testGroups": [
+    {
+      "name": "hrk_base_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_time_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_timeline_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_input_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_audio_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_replay_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_runtime_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_reference_game_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_determinism_tests",
+      "status": "PASS"
+    },
+    {
+      "name": "hrk_architecture_tests",
+      "status": "PASS"
+    }
+  ],
+  "software": "PASS",
+  "sourceHashes": {
+    "app/harmony/AppScope/app.json5": "6a04feeafa5ad75ac8e19d28cc5cf294a125a95507434cbb24c530bb10ee3f4f",
+    "app/harmony/AppScope/resources/base/element/string.json": "2df2898934ee256e225082d567246310fa5de839ed889a007657cda9e61b90b5",
+    "app/harmony/AppScope/resources/base/media/app_icon.svg": "10a349dbc4276842e0fd52366ff2f8edb07bfb7e8efe17daf2a8c20a5c9f755c",
+    "app/harmony/build-profile.json5": "31550ce19483718fe355c91d0582a954d5bea63f2f5f7ca3c1b7c261572b5c1d",
+    "app/harmony/entry/build-profile.json5": "b2f6ba680dfeb407c690b9bbc34469357118f5287e8c6d91b4ac2d1e708e9e87",
+    "app/harmony/entry/hvigorfile.ts": "de6f413080e8299112792cd496784a40355ee6eb795b2528cea5391d65bb5c68",
+    "app/harmony/entry/oh-package-lock.json5": "a085fbe78b0d99337bcfd2b9576b280c2dd94010ce0add69d117f3229693fa54",
+    "app/harmony/entry/oh-package.json5": "77e102ad4fdb5b6277710857fb76bd777ad766d6a4cf06728ceaed9da13f534e",
+    "app/harmony/entry/src/main/cpp/CMakeLists.txt": "1bcff68430e7aab438f63a69464f818aac4804becfed93f021bcd8b5ac02bf62",
+    "app/harmony/entry/src/main/cpp/types/libhrk_entry/index.d.ts": "f6eddbd3c26ff86092ec1cc4210e4ff80f539c4a99d3d04ed29c3fcb6421d7ab",
+    "app/harmony/entry/src/main/cpp/types/libhrk_entry/oh-package.json5": "d14ff66e5e9a7cdea36b099a62bb6547f411fb0a0b6c771a02bcbde20d5634f0",
+    "app/harmony/entry/src/main/ets/entryability/EntryAbility.ets": "83a0160a67d04d18e5b97942701cce3d911c370911f555eb621f4b4fdb6a3475",
+    "app/harmony/entry/src/main/ets/pages/Index.ets": "dde659994ec3dfc7ca4a74f8b839482065af72d5ab6e3673e9f5a7b1d0cdc598",
+    "app/harmony/entry/src/main/module.json5": "7d19c2fc39aa000aacac661d7fc4e581f8b656250473b86b3e3b705c09fc19a9",
+    "app/harmony/entry/src/main/resources/base/element/color.json": "aac181fb2680b51dd7600b64997c6e7ebf0cb20ec5c0e0c4e9c9423831222e2b",
+    "app/harmony/entry/src/main/resources/base/element/string.json": "f79adaf0cecd832850d1b1df3b3adf5019f205a0be86b6c9e4cae1e47dd46075",
+    "app/harmony/entry/src/main/resources/base/profile/main_pages.json": "4ca3fb089a34d7f463b3af626b3d472b4ae5b2021c64606d272c926535fe0814",
+    "app/harmony/entry/src/main/resources/rawfile/click_120bpm.wav": "8dd5ddf4f00f5a9e912dd629524df029f620ee21bff6cea523bed5ba13d6be0d",
+    "app/harmony/entry/src/main/resources/rawfile/mixed.replay": "0ee30f604b489005a230e929ca5690c21a9bfdc9c57835ff51256c7cd8bdbc9d",
+    "app/harmony/entry/src/main/resources/rawfile/simple_sequence.json": "e9a98b0cc5897e33bdce70f066f4b61d7e59f985a1deed5c205fc4c801484d56",
+    "app/harmony/hvigor/hvigor-config.json5": "f4a0e466367176a5f8f1eb776e6537d923502d5ea0f5ca94015948ebac784a8f",
+    "app/harmony/hvigorfile.ts": "e39d434027326990d164a45c742d8ed747692a7d4fe9cd7ceb70524a0175206a",
+    "app/harmony/oh-package.json5": "420d9d85f54ed825b815063f01a615f522216c9f54b907b959c52c9b52011c60",
+    "CMakeLists.txt": "ebc7e145d4dd07a3038ee4503f2f2c939032ceb3cb95d7bc30e5f4001d540fd6",
+    "core/CMakeLists.txt": "2cca33678a9e863c3f2a9ca9fab801baeb10b8c6b6498475d05b681d5f163e96",
+    "core/src/app/harmony/entry.cpp": "e831bae85e3fb58ac9408ede82f7f49e3d0c99fc9065ab43ced435ccefea40d9",
+    "core/src/app/headless/main.cpp": "31e1b5e8823ba04b1c70de922203799b5f57d2577e16dab62764868fa0adbd65",
+    "core/src/games/reference/game_reference.cpp": "0dcd02bcdcc3749ffe8b37f39be88cd3ccbaee522f5347314c4f0adbf19257bc",
+    "core/src/games/reference/include/hrk/reference.hpp": "77a702c183975f84844e6c086d44b29201468e671af45f1b90da1cf60c96dff4",
+    "core/src/interface/game/hrk/game_api.hpp": "3d51a5e89b226261c4cd30d62c3854afe9e091adff46e39ec066896534f21697",
+    "core/src/interface/platform/hrk/platform_api.hpp": "df2e11fd88549bedead77cac5b2158ff00b11ec70ca9e0b71682698100fa361c",
+    "core/src/interface/render/hrk/render_api.hpp": "36aaedbde3a6100389b7a066129e045cea59f5c7453ab44a915e40f4549c5dcb",
+    "core/src/kernel/audio/audio.cpp": "e52ca59ed57da448d96dc76dac3e97fd14e9657294f133cb42b77e2b670459ab",
+    "core/src/kernel/audio/include/hrk/audio.hpp": "dd0ac2d56bd974c043896fc6a992bdc9f7386edbbbef25d90c18335ab4c62f08",
+    "core/src/kernel/base/base.cpp": "f5b93700435df810d11512482d65144d0ffebc23abd57ce6aa106c8becba6de7",
+    "core/src/kernel/base/include/hrk/base.hpp": "2fc4db0c28fe739b99ae39f145993387d00167287ac7fa14c2c64b3ee73efbaf",
+    "core/src/kernel/gameplay/include/hrk/runtime.hpp": "e27dc089e044bdc785315ba43ce2ca876c526865b8de2515a4c6551367c41de2",
+    "core/src/kernel/gameplay/runtime.cpp": "928cec3b1ae8ca4ed4aa40f5c6dd9e9729bcf9011afec395989d80d0410a7b19",
+    "core/src/kernel/input/include/hrk/input.hpp": "66fef8b916e91aa136b79c478638c01aedd8e3101e6040f38dcc7c2fc7bf7ebd",
+    "core/src/kernel/input/input.cpp": "8c23550e3758a1dc984c93b3a44287cecfd0a6ae2b3c425bea744b4c5fb5ead3",
+    "core/src/kernel/render/include/hrk/render.hpp": "091e75e15331bf809c12af78cf6be05210a7ec86a3dded8eb09974120d5e4264",
+    "core/src/kernel/render/render.cpp": "ff3bc4c15f7c5fa686844b9b9221e5d3f2f514e6218efc19584dbddf49653982",
+    "core/src/kernel/replay/include/hrk/replay.hpp": "6e10c590d087fb8488c41523e83c0992531da775a8551e78e1ef51b8fee37cb9",
+    "core/src/kernel/replay/replay.cpp": "711d80431135d38441a62ef2a47d8bda93b02eae6d95b72f0f7ef35adc36492d",
+    "core/src/kernel/time/include/hrk/time.hpp": "1f5d57b7521d03872897d231e809b3f0c24edc28b640fb646063d11c298b7500",
+    "core/src/kernel/time/time.cpp": "c30f3e7e784af2c38f3b7f33b56bed9b9668c658c23443c4d278362e640299f7",
+    "core/src/kernel/timeline/include/hrk/timeline.hpp": "e5ac1fb884b1cfcd80ae20d83ac1715dccebf489178da3674e5d83115f665c8b",
+    "core/src/kernel/timeline/timeline.cpp": "738cd0c30a8e57550ec5dc2bb682631531817b18dd0d70b0f8caad2d93d357af",
+    "core/src/platform/harmony/audio/OHAudioBackend.cpp": "a28dde3d83235d9aaa205c9bec9bd6a812a6823483f7eb65f551e9e02d17ed65",
+    "core/src/platform/harmony/bridge/NativeBridge.cpp": "31fa864b1aa5228985d7384f151b992cdde61b4cdffd1db89f2d8b6650d6c2e6",
+    "core/src/platform/harmony/include/hrk/harmony.hpp": "50db02a346286ac809958719f4ac6d8ba78e446794b03bcf75bf960627b4cef5",
+    "core/src/platform/harmony/input/HarmonyInputBackend.cpp": "c526bf9a598f552f1522d864ffa6fa53c716b7e8c75fb29638965ee160080cfb",
+    "core/src/platform/harmony/platform_harmony.cpp": "0733f95bb73f88f144dbe550bbe37f6ef9b645d51fc22ead8a81fe7cc55eac18",
+    "core/src/platform/harmony/render/GlesRenderBackend.cpp": "7004485a67ca4cfeefbe6422b4de4cc443c4ee22a2d0a82f89ddbe85f1f2e04c",
+    "core/src/platform/headless/include/hrk/headless.hpp": "a1415d48d80c848297004592450ebdf94739516ea936694d81c595871954abc5",
+    "core/src/platform/headless/platform_headless.cpp": "ba6b23eb43742855bc0e2751365972b553c0fc39757189d0b841934126ad4101",
+    "core/tests/data/audio/click_120bpm.wav": "8dd5ddf4f00f5a9e912dd629524df029f620ee21bff6cea523bed5ba13d6be0d",
+    "core/tests/data/audio/short_test.wav": "164f83a9844001200eb5215d8f52706996885c3105c2a47b8d1f18d93cda9e47",
+    "core/tests/data/charts/bpm_change.json": "cfa96fafee69c4d86a8d933b3d81c8d4cac19e993928ad0121e4c5f3f1d26059",
+    "core/tests/data/charts/empty_chart.json": "3a68f8a147f8f8f404be8e4e4d8be0fbcdbc1dabc379e25116376a1fe0957a77",
+    "core/tests/data/charts/simple_sequence.json": "e9a98b0cc5897e33bdce70f066f4b61d7e59f985a1deed5c205fc4c801484d56",
+    "core/tests/data/charts/single_note.json": "e36e935af209217188aa455c22b4e989db66b2c1ea81269038483e3f44ddd436",
+    "core/tests/data/replay/miss.replay": "dd68221e414af9d2ccb216492ed35654acac79ccb484a2544f5c451497acb49d",
+    "core/tests/data/replay/mixed.replay": "0ee30f604b489005a230e929ca5690c21a9bfdc9c57835ff51256c7cd8bdbc9d",
+    "core/tests/data/replay/perfect.replay": "ba925a2e32ee4879f5af2fcdfb8dcd033e4a0766a12154f3a5dec0aa76011abf",
+    "core/tests/expected/mixed_result.json": "dfef1a37c657e78454f331907d7ff9a1cd707cd43a668b5c55caadbb4762a08a",
+    "core/tests/expected/simple_sequence_result.json": "dfef1a37c657e78454f331907d7ff9a1cd707cd43a668b5c55caadbb4762a08a",
+    "core/tests/tests.cpp": "2d70b6f8a3cca856625b532ccaef6defa162c994802dc4d6d46c8fc7414d5227",
+    "core/third_party/json/json.hpp": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63",
+    "core/third_party/json/LICENSE.MIT": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603",
+    "core/third_party/miniaudio/implementation.c": "ab1984bb9804ffd7b0303813595d0b345a8a86c34da1daffc353a14b34102a65",
+    "core/third_party/miniaudio/LICENSE": "457f1b500e0adf6bc059edddfa78a2f62012e7c3bb43476c20e0bd23b25ba0eb",
+    "core/third_party/miniaudio/miniaudio.h": "7e4f3f13c8fe66df2080ac3dd12a89193e3c2463cb7f067c798abd7331cd8ee6",
+    "tools/build_harmony.py": "1388a4db998499e2b8616367ff1b4acba5e1b0d4cf45d3800ed815b045b8febb",
+    "tools/check_architecture.py": "f08bf71239bef1b99c1fa7b3f07ed774711bd810008133b7a9629633a3616424",
+    "tools/generate_fixtures.py": "aeb05d047d890949e7a4a25df6182ae5083fcaa0dd2b6d641900932e210854cf",
+    "tools/validate.py": "e1412e473f0b169faff16b7e3a749572413824b6de5ac94d1a6f7e8ea47068bf",
+    "tools/verify_replay.py": "6f3943f0ec057d67e3fd97b0b4119214e3c3493ca3a25fc61ebbf5cde6279d85"
+  }
+}

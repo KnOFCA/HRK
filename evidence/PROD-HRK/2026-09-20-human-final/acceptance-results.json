@@ -1,0 +1,67 @@
+{
+  "TC-HAR-IN-001": {
+    "status": "PASS",
+    "method": "User actually touched device, no platform injection: both pointer0/1 have DOWN/MOVE/UP and simultaneous occupancy; second run released both before EOF",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-IN-002": {
+    "status": "PASS",
+    "method": "User actually touched device, no platform injection: both pointer0/1 have DOWN/MOVE/UP and simultaneous occupancy; second run released both before EOF",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-IN-003": {
+    "status": "PASS",
+    "method": "User actually touched device, no platform injection: both pointer0/1 have DOWN/MOVE/UP and simultaneous occupancy; second run released both before EOF",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-IN-004": {
+    "status": "PASS",
+    "method": "User actually touched device, no platform injection: both pointer0/1 have DOWN/MOVE/UP and simultaneous occupancy; second run released both before EOF",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-E2E-001": {
+    "status": "PASS",
+    "method": "User actually touched device, no platform injection: both pointer0/1 have DOWN/MOVE/UP and simultaneous occupancy; second run released both before EOF",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-E2E-002": {
+    "status": "PASS",
+    "method": "First human run 1 PERFECT/3 MISS/100; saved replay1129 events; complete Headless equality. Second710-event run also exact",
+    "evidence": "human-final-result.json; human-final-headless.json; human-final-lifecycle-headless.json"
+  },
+  "TC-E2E-003": {
+    "status": "PASS",
+    "method": "First human run 1 PERFECT/3 MISS/100; saved replay1129 events; complete Headless equality. Second710-event run also exact",
+    "evidence": "human-final-result.json; human-final-headless.json; human-final-lifecycle-headless.json"
+  },
+  "TC-E2E-004": {
+    "status": "PASS",
+    "method": "First human run 1 PERFECT/3 MISS/100; saved replay1129 events; complete Headless equality. Second710-event run also exact",
+    "evidence": "human-final-result.json; human-final-headless.json; human-final-lifecycle-headless.json"
+  },
+  "TC-E2E-005": {
+    "status": "PASS",
+    "method": "First human run 1 PERFECT/3 MISS/100; saved replay1129 events; complete Headless equality. Second710-event run also exact",
+    "evidence": "human-final-result.json; human-final-headless.json; human-final-lifecycle-headless.json"
+  },
+  "TC-HAR-AUD-001": {
+    "status": "PASS",
+    "method": "User explicitly confirmed sound/touch normal, then pause/resume sound normal",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-003": {
+    "status": "PASS",
+    "method": "User explicitly confirmed sound/touch normal, then pause/resume sound normal",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-004": {
+    "status": "PASS",
+    "method": "User explicitly confirmed sound/touch normal, then pause/resume sound normal",
+    "evidence": "human-final-assertions.json; human-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-004": {
+    "status": "PASS",
+    "method": "User physically rotated while paused and confirmed adapted screen and subsequent touch normal",
+    "evidence": "human-final-lifecycle-assertions.json; human-final-lifecycle-metrics.json"
+  }
+}

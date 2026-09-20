@@ -1,0 +1,112 @@
+{
+  "feature_id": "PROD-HRK",
+  "run_id": "2026-09-20-human-final",
+  "timestamp_utc": "2026-09-20T08:38:07.688640+00:00",
+  "overall": "PASS",
+  "scope": "Supplemental real-person input, audible pause/resume, rotation; not a fresh execution of all125cases",
+  "authorization": "Current user: 完成未完成的真人输入测试",
+  "environment": {
+    "device": "MRO-W00",
+    "os": "OpenHarmony-6.1.1.120"
+  },
+  "implementation_revision": "sha256:75d246439e08a282101d1aecc8cbae629b5f40cab9d01cd9a9dadbcd5285e8f9",
+  "specification_revision": "sha256:12d199698420d301ee37b5caf61d046ae3956fe2749329875944d90bbb5fd35c",
+  "design_revision": "sha256:8e83d49ea375b57d311b2648bf195b8ce00c15a49165ea93ebd73470ee60a0b1",
+  "implementation_commit": null,
+  "validator_commit": null,
+  "validation_commit": null,
+  "validation_ref": null,
+  "baseline_manifest": "../2026-09-20-final/manifest.json",
+  "revision_note": "Baseline product source hashes verified unchanged. Same installed HAP retained from physical-final run. No product edits or synthetic input in human sessions.",
+  "acceptance_results": "acceptance-results.json",
+  "artifacts": [
+    {
+      "path": "human-final-assertions.json",
+      "sha256": "722f1bac04d867c5acc09d7ec5c29f4d414e9b6477a2a88db8740c95e8152106",
+      "bytes": 899
+    },
+    {
+      "path": "human-final-disconnect.json",
+      "sha256": "28390660aae5d5f84da1338913d89d4f2a0e2c5003d686ec8b6fa5a79ea615fb",
+      "bytes": 150
+    },
+    {
+      "path": "human-final-headless.json",
+      "sha256": "fee68ea637fc8a8ee52245da19a658e1ac30ffbc8d0932ded880a0e68e26f00d",
+      "bytes": 375
+    },
+    {
+      "path": "human-final-lifecycle-assertions.json",
+      "sha256": "9caf709df78f6fb9ee5a2e6429ec58bc4d9ef82de47f3e45d9c4ea32fd2dc12e",
+      "bytes": 440
+    },
+    {
+      "path": "human-final-lifecycle-headless.json",
+      "sha256": "32d2c51ded97f8f5ec253209b1beecc4bb6fe070ce4682531dddee543fc671fc",
+      "bytes": 374
+    },
+    {
+      "path": "human-final-lifecycle-metrics.json",
+      "sha256": "9121878d50ae13df7d1dbebd474f745df27175892f63671059d1d6e4dde5dce9",
+      "bytes": 326
+    },
+    {
+      "path": "human-final-lifecycle-result.json",
+      "sha256": "7380dc2a67c87d249e0d8e92c55e3387d689df69940a55fe98d0a12b4e4dd8cc",
+      "bytes": 372
+    },
+    {
+      "path": "human-final-lifecycle-saved-layout.json",
+      "sha256": "0668341a272e259f856ba44bcaa518978c2c1c4ceea60505c2d649f131aa44f7",
+      "bytes": 22845
+    },
+    {
+      "path": "human-final-lifecycle.replay",
+      "sha256": "00008b78f605dc71311b2795fc26c6b61ee842e52b6dc7f91c89bf16ed3a1cca",
+      "bytes": 17072
+    },
+    {
+      "path": "human-final-metrics.json",
+      "sha256": "5d741a61a44b4a68a16c561aee652b51f5046ed19077a4f67551ae0d563e63b5",
+      "bytes": 326
+    },
+    {
+      "path": "human-final-ready-layout.json",
+      "sha256": "b036c7de9ec9e99d10a8846504d16650e1da6a344e92adbe83cc15a8e004e252",
+      "bytes": 22781
+    },
+    {
+      "path": "human-final-result.json",
+      "sha256": "f830ee67c8d9500e35f64e23883707609b75126937d11e7c909c0a7dc7f1ba20",
+      "bytes": 373
+    },
+    {
+      "path": "human-final-saved-layout.json",
+      "sha256": "d6e8616985023f0a077afaf3a3ca3f814f4323472835b55ec891d7574ac79fec",
+      "bytes": 22853
+    },
+    {
+      "path": "human-final-session.json",
+      "sha256": "8dc168b198fadbbf78ebfebf9c45c4f10a017e2aeb8ff89bc7e9a27759f672c7",
+      "bytes": 237
+    },
+    {
+      "path": "human-final.replay",
+      "sha256": "3ce1db719aceb6c0a80c154182d87a185e384eb1d5fc6c824bdf08fd44254a0a",
+      "bytes": 27128
+    }
+  ],
+  "user_confirmations": [
+    "保存成功、出现 PERFECT，声音/触摸无异常。",
+    "暂停/恢复声音、旋转后的画面与触摸正常。"
+  ],
+  "observations": [
+    "Run1:1129 events,1 PERFECT/3 MISS; two complete dual-pointer gestures before final gesture extended across8s EOF. Post-EOF releases outside replay were not counted as missing in earlier complete gestures.",
+    "Run2:710 events,0 PERFECT/4 MISS; both fingers released before EOF; final active pointer set empty.",
+    "Full judgment JSON equals Headless in both runs.",
+    "LateInput counts17 and3; overflow0 both runs. User perceived no abnormality, but diagnostics are NOT zero. Delivery rejection remains a recorded limitation under existing watermark contract; no claim of no lost input.",
+    "No actual human input was replaced by synthetic injection or inferred from a mock."
+  ],
+  "disconnected": true,
+  "disconnect_evidence": "human-final-disconnect.json"
+}

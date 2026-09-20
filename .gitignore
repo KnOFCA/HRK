@@ -1,0 +1,27 @@
+# Generated artifacts and local configuration
+build/
+node_modules/
+oh_modules/
+.hvigor/
+.idea/
+local.properties
+.env
+.env.*
+!.env.example
+*.p12
+*.p7b
+*.cer
+*.key
+*.log
+
+# Historical validation log retained as documentation evidence.
+!docs/archive/pre-reset/docs/evidence/mingw-ctest.log
+
+# Device-specific signing settings: use the tracked template for a fresh checkout.
+src/app/harmony/build-profile.json5
+
+# Python helper caches
+__pycache__/
+
+# Native build configuration cache
+.cxx/

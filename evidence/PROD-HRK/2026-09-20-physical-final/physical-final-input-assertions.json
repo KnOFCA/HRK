@@ -1,0 +1,14 @@
+{
+  "perfect": 2,
+  "events": 178,
+  "pointers": [
+    0,
+    1
+  ],
+  "phases": [
+    0,
+    1,
+    2
+  ],
+  "exactHeadless": true
+}

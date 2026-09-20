@@ -1,0 +1,5 @@
+{
+  "tools/device-test.py": "1e4437493ef01dc7d9da83694739bcdd54ffc960eaf66f1819db42f2880af6c9",
+  "tools/test-device-input.py": "07aa5798f49c2c2501250b49d052f2d1d91920fdece7d9dbe40185cece2c2840",
+  "tools/test-device-lifecycle.py": "fa6bb3bf2e4873b1e1e63bba650d77543034cd30b14cfa040e34c1bfe4263671"
+}

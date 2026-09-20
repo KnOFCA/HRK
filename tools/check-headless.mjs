@@ -1,0 +1,12 @@
+import {spawnSync} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const exe=process.argv[2];
+if(!exe||!fs.existsSync(exe))throw new Error('Missing headless executable');
+const result=spawnSync(exe,['tests/data/charts/simple_sequence.json','tests/data/audio/short_test.wav','tests/data/replay/mixed.replay'],{cwd:root,encoding:'utf8'});
+assert.equal(result.status,0,result.stderr);
+assert.deepEqual(JSON.parse(result.stdout),JSON.parse(fs.readFileSync(path.join(root,'tests/expected/mixed_result.json'),'utf8')));
+console.log('TC-DET-001 CLI fixed fixture + complete expected JSON PASS');

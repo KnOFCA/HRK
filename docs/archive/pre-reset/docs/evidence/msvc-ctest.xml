@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Win32-MSBuild"
+	tests="10"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="Kn"
+	time="0"
+	timestamp="2026-09-14T08:47:11"
+	>
+	<testcase name="hrk_base_tests" classname="hrk_base_tests" time="0.0111014" status="run">
+		<system-out>base: PASS
+20019 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_time_tests" classname="hrk_time_tests" time="0.0254453" status="run">
+		<system-out>time: PASS
+11 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_timeline_tests" classname="hrk_timeline_tests" time="0.0087487" status="run">
+		<system-out>timeline: PASS
+15 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_input_tests" classname="hrk_input_tests" time="0.0086298" status="run">
+		<system-out>input: PASS
+3007 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_audio_tests" classname="hrk_audio_tests" time="0.0256344" status="run">
+		<system-out>audio: PASS
+12 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_replay_tests" classname="hrk_replay_tests" time="0.012204" status="run">
+		<system-out>replay: PASS
+166 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_runtime_tests" classname="hrk_runtime_tests" time="0.0294032" status="run">
+		<system-out>runtime: PASS
+17 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_reference_game_tests" classname="hrk_reference_game_tests" time="0.0096312" status="run">
+		<system-out>reference_game: PASS
+25 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_determinism_tests" classname="hrk_determinism_tests" time="0.10592" status="run">
+		<system-out>determinism: PASS
+853 checks passed
+</system-out>
+	</testcase>
+	<testcase name="hrk_architecture_tests" classname="hrk_architecture_tests" time="0.0582791" status="run">
+		<system-out>Architecture boundaries and target dependency graph: PASS
+</system-out>
+	</testcase>
+</testsuite>

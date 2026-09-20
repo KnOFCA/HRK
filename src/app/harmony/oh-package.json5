@@ -1,0 +1,8 @@
+{
+  "modelVersion": "6.0.0",
+  "name": "hrk",
+  "version": "0.1.0",
+  "description": "Harmony Rhythm Kernel",
+  "dependencies": {},
+  "devDependencies": {}
+}

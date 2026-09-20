@@ -1,0 +1,35 @@
+{
+  "score": 300,
+  "perfect": 3,
+  "miss": 1,
+  "judgments": [
+    {
+      "id": 1,
+      "type": 1,
+      "targetTime": 500000000,
+      "inputTime": 500000000,
+      "error": 0
+    },
+    {
+      "id": 2,
+      "type": 1,
+      "targetTime": 1000000000,
+      "inputTime": 1020000000,
+      "error": 20000000
+    },
+    {
+      "id": 3,
+      "type": 2,
+      "targetTime": 1500000000,
+      "inputTime": 1550000001,
+      "error": 50000001
+    },
+    {
+      "id": 4,
+      "type": 1,
+      "targetTime": 2000000000,
+      "inputTime": 1960000000,
+      "error": -40000000
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "feature_id": "PROD-HRK",
+  "run_id": "2026-09-20-physical-final",
+  "timestamp_utc": "2026-09-20T05:10:06.102002+00:00",
+  "overall": "PASS",
+  "scope": "Supplemental final-HAP physical-device tests excluding human input/listening/physical rotation; not a fresh execution of all 125 cases",
+  "authorization": "Current user: 完成未完成的真机测试，排除需要真人输入的测试。测试完成后断开真机连接",
+  "environment": {
+    "device": "MRO-W00",
+    "os": "OpenHarmony-6.1.1.120",
+    "architecture": "arm64-v8a",
+    "surface": "2728x806",
+    "rates": "requested60 actual60; requested120 actual90"
+  },
+  "specification_revision": "sha256:12d199698420d301ee37b5caf61d046ae3956fe2749329875944d90bbb5fd35c",
+  "design_revision": "sha256:8e83d49ea375b57d311b2648bf195b8ce00c15a49165ea93ebd73470ee60a0b1",
+  "implementation_revision": "sha256:75d246439e08a282101d1aecc8cbae629b5f40cab9d01cd9a9dadbcd5285e8f9",
+  "implementation_commit": null,
+  "validator_commit": null,
+  "validation_commit": null,
+  "validation_ref": null,
+  "baseline_manifest": "../2026-09-20-final/manifest.json",
+  "revision_note": "Verified all baseline source hashes unchanged; exact final HAP hash matches baseline. Only test helpers gained output prefix/device-side injection and RPC-latency-tolerant assertions. No product rebuild required.",
+  "hap": {
+    "path": "build/artifacts/hrk-v0.1.0-device-tested.hap",
+    "sha256": "2f91302b795c5cb6af52ff8467b57875b8132126fccb2c271086e373a94e5236",
+    "bytes": 17473662
+  },
+  "validator_revision": "sha256:76b9a8f9111360992b8bdbb3839625d33d42905c247b300a6b71e707b91e477d",
+  "acceptance_results": "acceptance-results.json",
+  "artifacts": [
+    {
+      "path": "physical-final-disconnect.json",
+      "sha256": "eb4eded0f24f5e5a97a394487234924f3d969346b1952ba7530702b609f0317f",
+      "bytes": 205
+    },
+    {
+      "path": "physical-final-foreground-frozen-layout.json",
+      "sha256": "c5db9f20400bbcd190d89512ef7f6cedee395d21b247a586cc63de44484b6418",
+      "bytes": 22791
+    },
+    {
+      "path": "physical-final-foreground-layout.json",
+      "sha256": "c5db9f20400bbcd190d89512ef7f6cedee395d21b247a586cc63de44484b6418",
+      "bytes": 22791
+    },
+    {
+      "path": "physical-final-input-after-layout.json",
+      "sha256": "693636f208fb96e465bb0f07d2a1ceb643e7367763563ed19ba84b6412069246",
+      "bytes": 22849
+    },
+    {
+      "path": "physical-final-input-assertions.json",
+      "sha256": "6f44b8dee0b69d72f339585ffba4480c8bd2a7c96612e54a08c90a8379b994b7",
+      "bytes": 146
+    },
+    {
+      "path": "physical-final-input-before-layout.json",
+      "sha256": "a7e6711fdf223e56e2b155b7d3cc60607a3457b20beab6b6f58b3ab6c55272b0",
+      "bytes": 22781
+    },
+    {
+      "path": "physical-final-input-headless.json",
+      "sha256": "5d90f94b32a3d8a35ec007f5d7af561aaca6f6b102c4e306a7bad45641c5da41",
+      "bytes": 375
+    },
+    {
+      "path": "physical-final-input-metrics.json",
+      "sha256": "aa03fd4327762aa25cffdfb36876c29111d8e628653f89eef840dc6cd590fa29",
+      "bytes": 407
+    },
+    {
+      "path": "physical-final-input-result.json",
+      "sha256": "ca64d4dfa1666d748d2594bd11f23c702b8200e5f554ee1bab725ebbe07eb6b9",
+      "bytes": 373
+    },
+    {
+      "path": "physical-final-input.replay",
+      "sha256": "2e762692d3631c87d480c51f5cdf5e808d74cae449da8b6bc26aab3e996e28d5",
+      "bytes": 4304
+    },
+    {
+      "path": "physical-final-last-layout.json",
+      "sha256": "08192a332175c99c5146febffde248608ec051ef6d053172bd9ac5d208797e4f",
+      "bytes": 22831
+    },
+    {
+      "path": "physical-final-lifecycle-assertions.json",
+      "sha256": "469e648d159daef3d7f3b1f854e4125fddb27d511d687a4263b856a0de132a9b",
+      "bytes": 205
+    },
+    {
+      "path": "physical-final-lifecycle-controls-layout.json",
+      "sha256": "a7e6711fdf223e56e2b155b7d3cc60607a3457b20beab6b6f58b3ab6c55272b0",
+      "bytes": 22781
+    },
+    {
+      "path": "physical-final-lifecycle-metrics.json",
+      "sha256": "49554c231f357908557683d45e5308e5eaf9236b9114b93eabd1e5d10952fb63",
+      "bytes": 407
+    },
+    {
+      "path": "physical-final-lifecycle-result.json",
+      "sha256": "0992d822e155ce9791f3a86a9bd76c55b24f3e10948cf2b228506e2dc8fa21c9",
+      "bytes": 346
+    },
+    {
+      "path": "physical-final-lifecycle.replay",
+      "sha256": "7db48d258637e53f3cf7718f14c5e25a7eba47099eede4e40504b20971134712",
+      "bytes": 224
+    },
+    {
+      "path": "physical-final-mixed-headless.json",
+      "sha256": "c035e653ea873148cda430063779d396b2ef91e32965a43692f66d371c521fba",
+      "bytes": 370
+    },
+    {
+      "path": "physical-final-mixed-metrics.json",
+      "sha256": "5d741a61a44b4a68a16c561aee652b51f5046ed19077a4f67551ae0d563e63b5",
+      "bytes": 326
+    },
+    {
+      "path": "physical-final-mixed-result.json",
+      "sha256": "92d606fb34241ccb4225cd11f0f1beef582d009e470aefd4713aebd59b513e3a",
+      "bytes": 368
+    },
+    {
+      "path": "physical-final-mixed.replay",
+      "sha256": "5b4e6660a4f6dfcab2dbf06060ddc153513e3e959c60315c0a0fad5bccfa3dd8",
+      "bytes": 104
+    },
+    {
+      "path": "physical-final-paused-after-layout.json",
+      "sha256": "6b42176b4259b65382f1e8a306fba68a00e5d557b0f9a8af73d8323b7a9411a7",
+      "bytes": 22791
+    },
+    {
+      "path": "physical-final-paused-before-layout.json",
+      "sha256": "6b42176b4259b65382f1e8a306fba68a00e5d557b0f9a8af73d8323b7a9411a7",
+      "bytes": 22791
+    },
+    {
+      "path": "physical-final-perf120-headless.json",
+      "sha256": "4afb47fbd1ad9195bb623bb24373fbd664f3826dda27357beae7e5dd2772c0e3",
+      "bytes": 9702
+    },
+    {
+      "path": "physical-final-perf120-metrics.json",
+      "sha256": "aa03fd4327762aa25cffdfb36876c29111d8e628653f89eef840dc6cd590fa29",
+      "bytes": 407
+    },
+    {
+      "path": "physical-final-perf120-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700
+    },
+    {
+      "path": "physical-final-perf120.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984
+    },
+    {
+      "path": "physical-final-perf60-headless.json",
+      "sha256": "4afb47fbd1ad9195bb623bb24373fbd664f3826dda27357beae7e5dd2772c0e3",
+      "bytes": 9702
+    },
+    {
+      "path": "physical-final-perf60-metrics.json",
+      "sha256": "cf46810f775f022ab533079c8be56be3b6209917bdaf983dd18994240c80f7ce",
+      "bytes": 406
+    },
+    {
+      "path": "physical-final-perf60-result.json",
+      "sha256": "f8957844f18db2aeca478fcf9a381943dba3264d4eddc2defef8f0700a0a18c9",
+      "bytes": 9700
+    },
+    {
+      "path": "physical-final-perf60.replay",
+      "sha256": "7d837f78a8ebf20c918cee6182867fc45f00c608514e331f0b84dbf094767e1e",
+      "bytes": 5984
+    },
+    {
+      "path": "physical-final-rebuilt-layout.json",
+      "sha256": "360287eb5c41dade117c456a8b4fe49989f5e61c81e4869d2e43aaebc25f4bba",
+      "bytes": 22791
+    },
+    {
+      "path": "physical-final-resumed-layout.json",
+      "sha256": "f8232134da6f3aefb5d6bb9250fe2a6296a61bf07293a08584759168e8dffe84",
+      "bytes": 22791
+    },
+    {
+      "path": "physical-final-seek-layout.json",
+      "sha256": "4fd9379a0ef11ee525cab35f5cd46ea4d1189fe4957cbbe6f8e2500ad762c200",
+      "bytes": 22791
+    }
+  ],
+  "excluded": [
+    "Real human finger actions and subjective touch feel (TC-HAR-IN-001..004 / TC-E2E-001 physical aspects)",
+    "New listening/audio quality confirmation (TC-HAR-AUD-001 and audible aspects of pause/resume)",
+    "Physical rotation by a person"
+  ],
+  "additional_observations": {
+    "injected_pointers": [
+      0,
+      1
+    ],
+    "injected_phases": [
+      "DOWN",
+      "MOVE",
+      "UP"
+    ],
+    "recorded_events": 178,
+    "late_rejected_injection_events": 5,
+    "overflow": 0,
+    "note": "Five synthetic events exceeded the documented delivery watermark; accepted events replay identically. Not claimed as zero-latency or human input evidence."
+  },
+  "test_harness_corrections": [
+    "Prefix path concatenation fixed before final assertions",
+    "Separate wireless click calls missed narrow timing window; final injection batches DOWN/UP on device",
+    "Host RPC elapsed includes network/uitest delay and cannot be equated to song elapsed; assert frozen pause, positive bounded resume and recorded values"
+  ],
+  "disconnected": true,
+  "disconnect_evidence": "physical-final-disconnect.json",
+  "commands": [
+    {
+      "argv": [
+        "hdc",
+        "install",
+        "-r",
+        "build/artifacts/hrk-v0.1.0-device-tested.hap"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "tools/test-device-input.py",
+        "--hdc",
+        "SDK hdc",
+        "--prefix",
+        "physical-final"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "tools/test-device-lifecycle.py",
+        "--hdc",
+        "SDK hdc",
+        "--prefix",
+        "physical-final"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "hdc",
+        "tconn",
+        "<physical device TCP endpoint>",
+        "-remove"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "hdc",
+        "list",
+        "targets"
+      ],
+      "exit_code": 0,
+      "stdout": "[Empty]"
+    }
+  ]
+}

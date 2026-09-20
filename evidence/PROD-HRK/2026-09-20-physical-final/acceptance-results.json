@@ -1,0 +1,112 @@
+{
+  "TC-BUILD-003": {
+    "status": "PASS",
+    "method": "Installed exact accepted signed HAP on MRO-W00; no product source or binary change",
+    "evidence": "manifest.json"
+  },
+  "TC-PERF-001": {
+    "status": "PASS",
+    "method": "60.016s continuous capture; p95 16.6707ms; lowest second 55FPS; 3597 intervals",
+    "evidence": "physical-final-perf60-metrics.json"
+  },
+  "TC-HAR-FRAME-001": {
+    "status": "PASS",
+    "method": "60.016s continuous capture; p95 16.6707ms; lowest second 55FPS; 3597 intervals",
+    "evidence": "physical-final-perf60-metrics.json"
+  },
+  "TC-PERF-002": {
+    "status": "UNSUPPORTED_DEVICE",
+    "method": "Request 120Hz accepted; actual ~90Hz, minimum84FPS, p95 11.1205ms; no claim of 120Hz support",
+    "evidence": "physical-final-perf120-metrics.json"
+  },
+  "TC-HAR-FRAME-003": {
+    "status": "PASS",
+    "method": "60Hz and requested120/actual90Hz: full 124-judgment sequences identical and equal Headless",
+    "evidence": "physical-final-perf60-result.json; physical-final-perf120-result.json; physical-final-perf60-headless.json; physical-final-perf120-headless.json"
+  },
+  "TC-E2E-002": {
+    "status": "PASS",
+    "method": "Native platform injection: 2 PERFECT, 2 MISS;178 recorded events; full Headless comparison equal. Does not replace human touch acceptance",
+    "evidence": "physical-final-input-assertions.json; physical-final-input-result.json; physical-final-input-headless.json"
+  },
+  "TC-E2E-003": {
+    "status": "PASS",
+    "method": "Native platform injection: 2 PERFECT, 2 MISS;178 recorded events; full Headless comparison equal. Does not replace human touch acceptance",
+    "evidence": "physical-final-input-assertions.json; physical-final-input-result.json; physical-final-input-headless.json"
+  },
+  "TC-E2E-004": {
+    "status": "PASS",
+    "method": "Native platform injection: 2 PERFECT, 2 MISS;178 recorded events; full Headless comparison equal. Does not replace human touch acceptance",
+    "evidence": "physical-final-input-assertions.json; physical-final-input-result.json; physical-final-input-headless.json"
+  },
+  "TC-E2E-005": {
+    "status": "PASS",
+    "method": "Native platform injection: 2 PERFECT, 2 MISS;178 recorded events; full Headless comparison equal. Does not replace human touch acceptance",
+    "evidence": "physical-final-input-assertions.json; physical-final-input-result.json; physical-final-input-headless.json"
+  },
+  "TC-BACKEND-002": {
+    "status": "PASS",
+    "method": "Fixed mixed replay: full expected and Headless JSON equal, 3 PERFECT/1 MISS/300",
+    "evidence": "physical-final-mixed-result.json; physical-final-mixed-headless.json"
+  },
+  "TC-BACKEND-003": {
+    "status": "PASS",
+    "method": "Fixed mixed replay: full expected and Headless JSON equal, 3 PERFECT/1 MISS/300",
+    "evidence": "physical-final-mixed-result.json; physical-final-mixed-headless.json"
+  },
+  "TC-HAR-AUD-002": {
+    "status": "PASS",
+    "method": "Position/control-only automated verification: pause5.034s unchanged after2s, resume5.745s, seek4.290s; no new audible quality claim",
+    "evidence": "physical-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-003": {
+    "status": "PASS",
+    "method": "Position/control-only automated verification: pause5.034s unchanged after2s, resume5.745s, seek4.290s; no new audible quality claim",
+    "evidence": "physical-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-004": {
+    "status": "PASS",
+    "method": "Position/control-only automated verification: pause5.034s unchanged after2s, resume5.745s, seek4.290s; no new audible quality claim",
+    "evidence": "physical-final-lifecycle-assertions.json"
+  },
+  "TC-HAR-AUD-005": {
+    "status": "PASS",
+    "method": "Position/control-only automated verification: pause5.034s unchanged after2s, resume5.745s, seek4.290s; no new audible quality claim",
+    "evidence": "physical-final-lifecycle-assertions.json"
+  },
+  "TC-E2E-006": {
+    "status": "PASS",
+    "method": "Position/control-only automated verification: pause5.034s unchanged after2s, resume5.745s, seek4.290s; no new audible quality claim",
+    "evidence": "physical-final-lifecycle-assertions.json"
+  },
+  "TC-E2E-007": {
+    "status": "PASS",
+    "method": "Position/control-only automated verification: pause5.034s unchanged after2s, resume5.745s, seek4.290s; no new audible quality claim",
+    "evidence": "physical-final-lifecycle-assertions.json"
+  },
+  "TC-LIFE-001": {
+    "status": "PASS",
+    "method": "Background/foreground and recreation freeze4.634s; creates2/destroys1/resizes1; final resized surface2182x806",
+    "evidence": "physical-final-lifecycle-assertions.json; physical-final-lifecycle-metrics.json"
+  },
+  "TC-LIFE-002": {
+    "status": "PASS",
+    "method": "Background/foreground and recreation freeze4.634s; creates2/destroys1/resizes1; final resized surface2182x806",
+    "evidence": "physical-final-lifecycle-assertions.json; physical-final-lifecycle-metrics.json"
+  },
+  "TC-LIFE-003": {
+    "status": "PASS",
+    "method": "Background/foreground and recreation freeze4.634s; creates2/destroys1/resizes1; final resized surface2182x806",
+    "evidence": "physical-final-lifecycle-assertions.json; physical-final-lifecycle-metrics.json"
+  },
+  "TC-LIFE-004": {
+    "status": "PASS",
+    "method": "Background/foreground and recreation freeze4.634s; creates2/destroys1/resizes1; final resized surface2182x806",
+    "evidence": "physical-final-lifecycle-assertions.json; physical-final-lifecycle-metrics.json"
+  },
+  "TC-HAR-004": {
+    "status": "PASS",
+    "method": "Background/foreground and recreation freeze4.634s; creates2/destroys1/resizes1; final resized surface2182x806",
+    "evidence": "physical-final-lifecycle-assertions.json; physical-final-lifecycle-metrics.json"
+  }
+}

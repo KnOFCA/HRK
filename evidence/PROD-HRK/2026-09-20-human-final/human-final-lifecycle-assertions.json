@@ -1,0 +1,25 @@
+{
+  "perfect": 0,
+  "miss": 4,
+  "events": 710,
+  "pointerPhases": {
+    "0": [
+      0,
+      1,
+      2
+    ],
+    "1": [
+      0,
+      1,
+      2
+    ]
+  },
+  "peakSimultaneousPointers": 2,
+  "activeAtEnd": [],
+  "exactHeadless": true,
+  "hud": [
+    "FPS 60 · 输入 710 · 迟到 3 · 溢出 0",
+    "Native: LateInput"
+  ],
+  "userConfirmation": "暂停/恢复声音、旋转后的画面与触摸正常。"
+}
