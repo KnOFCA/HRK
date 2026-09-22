@@ -69,5 +69,11 @@ public:
     item = data_[r]; read_.store((r + 1) % data_.size(), std::memory_order_release); return true;
   }
   void clear() { read_.store(write_.load(std::memory_order_acquire), std::memory_order_release); }
+  template<class Observe> void clearObserved(Observe observe) {
+    // Same snapshot boundary as clear(); never drain newly submitted elements.
+    const auto end=write_.load(std::memory_order_acquire);
+    for(auto r=read_.load(std::memory_order_relaxed);r!=end;r=(r+1)%data_.size())observe(data_[r]);
+    read_.store(end,std::memory_order_release);
+  }
 };
 }

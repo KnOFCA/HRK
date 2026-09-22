@@ -1,0 +1,210 @@
+PASS     dependency available: node
+PASS     dependency available: git
+PASS     dependency available: bash
+
+===== SDD lint =====
+===== SDD lint =====
+features=2 markdown=55 links=175 manifests=3
+FAIL  [C1-approval] specs/product/input-reliability/spec.md:1  approval=Approved 但 spec_status≠Approved
+FAIL  [C9-terminology] specs/product/input-reliability/spec.md  规格未定义工作流概念 "Workflow Step"
+
+共 2 项违规
+
+===== Markdown links =====
+
+链接检查: 已检查=175 失效=0 输入缺失=0
+
+===== Evidence provenance =====
+PASS     dependency available: node
+PASS     dependency available: git
+Evidence manifests=3; failures=0
+
+===== Validator tests =====
+✔ checkLinks: valid input passes (8.0727ms)
+✔ checkLinks: broken link fails (3.7061ms)
+✔ checkLinks: missing input file fails (never silently skipped) (1.9542ms)
+✔ checkLinks: wrong path fails (5.6821ms)
+✔ lint: valid fixture has no violations (15.0753ms)
+✔ lint: invalid status is rejected (10.587ms)
+✔ lint: missing required metadata is rejected (13.6585ms)
+✔ lint: forged Approved without approver is rejected (11.8552ms)
+✔ lint: duplicate canonical ID is rejected (18.6755ms)
+✔ lint: numeric inconsistency is rejected (11.3644ms)
+✔ lint: SPEC->DESIGN requirement dependency is rejected (12.0058ms)
+✔ lint: unexplained canonical ID reference is rejected (10.707ms)
+✔ lint: missing feature document is rejected (6.8948ms)
+✔ shell lib: missing dependency yields BLOCKED (exit 2) (38.0238ms)
+✔ shell lib: present dependency yields PASS (exit 0) (29.8895ms)
+✔ shell lib: missing tracked path yields FAIL (exit 1) (36.0466ms)
+✔ shell lib: absent runtime path yields BLOCKED (exit 2) (37.7175ms)
+✔ shell lib: sha256 hex tokens do not trigger the phone-number pattern (181.4487ms)
+✔ shell lib: real phone-like token is still detected (139.8353ms)
+✔ CLI: check-links.mjs exits 2 on missing explicit input (72.7628ms)
+✖ CLI: lint_sdd.mjs runs and reports on the real repository (147.186ms)
+✔ shell scripts: bash syntax check (195.405ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 21
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1152.7373
+
+✖ failing tests:
+
+test at tools\validation\tests\validators.test.mjs:296:1
+✖ CLI: lint_sdd.mjs runs and reports on the real repository (147.186ms)
+  AssertionError [ERR_ASSERTION]: {
+    "violations": [
+      {
+        "check": "C1-approval",
+        "file": "specs/product/input-reliability/spec.md",
+        "line": 1,
+        "message": "approval=Approved 但 spec_status≠Approved"
+      },
+      {
+        "check": "C9-terminology",
+        "file": "specs/product/input-reliability/spec.md",
+        "line": 0,
+        "message": "规格未定义工作流概念 \"Workflow Step\""
+      }
+    ],
+    "stats": {
+      "features": 2,
+      "markdown": 55,
+      "linksChecked": 175,
+      "manifests": 3
+    },
+    "features": [
+      {
+        "domain": "product",
+        "name": "input-reliability",
+        "dir": "specs/product/input-reliability"
+      },
+      {
+        "domain": "product",
+        "name": "rhythm-kernel",
+        "dir": "specs/product/rhythm-kernel"
+      }
+    ]
+  }
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///D:/Source/harmonyOSAPP/HRK/tools/validation/tests/validators.test.mjs:304:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+===== Required inputs =====
+PASS     input present: AGENTS.md
+PASS     input present: agent.md
+PASS     input present: CONTRIBUTING.md
+PASS     input present: README.md
+PASS     input present: SPEC.md
+PASS     input present: DESIGN.md
+PASS     input present: TASKS.md
+PASS     input present: TEST_PLAN.md
+PASS     input present: VALIDATION.md
+PASS     input present: .gitignore
+PASS     input present: .gitattributes
+PASS     input present: docs/TOOLCHAIN.md
+PASS     input present: docs/EXTRACTION.md
+PASS     input present: docs/adr/README.md
+PASS     input present: docs/changes/CHANGELOG.md
+PASS     input present: docs/migration/SDD_ARCHITECTURE_MIGRATION.md
+PASS     input present: docs/workflow/remote-build/WORKFLOW.md
+PASS     input present: specs/README.md
+PASS     input present: specs/product/README.md
+PASS     input present: specs/engineering/README.md
+PASS     input present: specs/process/README.md
+PASS     input present: specs/_template/spec.md
+PASS     input present: specs/_template/design.md
+PASS     input present: specs/_template/tasks.md
+PASS     input present: specs/_template/test-plan.md
+PASS     input present: specs/_template/validation.md
+PASS     input present: src/README.md
+PASS     input present: tests/README.md
+PASS     input present: evidence/README.md
+PASS     input present: tools/harmony/harmony_build.py
+PASS     input present: tools/harmony/README.md
+PASS     input present: tools/sdd/lib.mjs
+PASS     input present: tools/sdd/lint_sdd.mjs
+PASS     input present: tools/sdd/revision.mjs
+PASS     input present: tools/sdd/new-feature.mjs
+PASS     input present: tools/sdd/check.sh
+PASS     input present: tools/sdd/check-provenance.sh
+PASS     input present: tools/sdd/check-provenance.mjs
+PASS     input present: tools/validation/lib.sh
+PASS     input present: tools/validation/lib.mjs
+PASS     input present: tools/validation/check-links.mjs
+PASS     input present: tools/validation/tests/validators.test.mjs
+PASS     input present: tools/validation/dryrun.mjs
+
+===== summary: PASS=43 FAIL=0 BLOCKED=0 =====
+
+===== Template dry-run =====
+PASS     dependency available: node
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   {
++     check: 'C1-approval',
++     file: 'specs/product/input-reliability/spec.md',
++     line: 1,
++     message: 'approval=Approved 但 spec_status≠Approved'
++   },
++   {
++     check: 'C9-terminology',
++     file: 'specs/product/input-reliability/spec.md',
++     line: 0,
++     message: '规格未定义工作流概念 "Workflow Step"'
++   }
++ ]
+- []
+
+    at file:///D:/Source/harmonyOSAPP/HRK/tools/validation/dryrun.mjs:22:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      check: 'C1-approval',
+      file: 'specs/product/input-reliability/spec.md',
+      line: 1,
+      message: 'approval=Approved 但 spec_status≠Approved'
+    },
+    {
+      check: 'C9-terminology',
+      file: 'specs/product/input-reliability/spec.md',
+      line: 0,
+      message: '规格未定义工作流概念 "Workflow Step"'
+    }
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0
+
+===== FAIL=3 BLOCKED=0 =====

@@ -1,0 +1,1 @@
+{"actual":2,"equal":false,"expected":1,"path":"$.boundaries[3].activePointers.length"}

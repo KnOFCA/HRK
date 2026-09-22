@@ -26,7 +26,7 @@ python tools/harmony/harmony_build.py --project src/app/harmony --deveco "<DevEc
 
 ## 阅读入口
 
-下一轮 [v0.1.1 输入可靠性文档](specs/product/input-reliability/spec.md) 已建立草案，覆盖 LI-001～LI-004；仅完成文档规划，尚未编码、测试或验收。
+下一轮 [v0.1.1 输入可靠性文档](specs/product/input-reliability/spec.md) 已完成 TASK-001～003：调查契约、采集、原始调度重放与最小化工具；AC-001 和工具主机验证通过。真机根因调查及修复验收尚待后续任务。
 
 | 内容 | 文档 |
 |---|---|

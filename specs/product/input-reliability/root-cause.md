@@ -1,6 +1,6 @@
 # v0.1.1 LateInput 根因与影响调查报告（待调查）
 
-本文件用于记录事实、假设、实验和结论，不定义需求。依据 [spec](spec.md) 的REQ-002/003，方法见 [test-plan](test-plan.md)。当前只建立调查框架；未采集、复现或修复。
+本文件用于记录事实、假设、实验和结论，不定义需求。依据 [spec](spec.md) 的REQ-002/003，方法见 [test-plan](test-plan.md)。当前真人调查仍未执行；TASK-003 已完成合成复现与对照工具，证据见 [validation](validation.md)，不据此推断历史真人原因，未实施行为修复。
 
 ## 1. 已知事实与证据边界
 
@@ -9,7 +9,7 @@
 | v0.1.0真人两轮LateInput=17/3，overflow=0 | [正式签收](../../../docs/acceptance/v0.1.0.md)、[历史验证](../../../VALIDATION.md) | 存在拒绝，已有计数未显示队列溢出；无法还原被拒绝事件类型 |
 | 已接受Replay与Headless完整结果一致 | 同上 | 接受事件的重放一致，不证明原始输入完整或拒绝无影响 |
 | Harmony对MOVE/CANCEL遍历touchPoints并保留各自timestamp | [backend.cpp](../../../src/platform/harmony/backend.cpp) 的touch实现（本文建立时） | 存在按数组顺序送入不同触点时间的路径；尚未证明真实拒绝由此产生 |
-| Session在接受事件后推进watermark，拒绝早于watermark事件 | [session.cpp](../../../src/kernel/gameplay/session.cpp) 的update实现（本文建立时） | 可构造调查场景；尚无本轮运行证据 |
+| Session在接受事件后推进watermark，拒绝早于watermark事件 | [session.cpp](../../../src/kernel/gameplay/session.cpp) 的update实现；TASK-003 合成对照 | 合成批内逆序可重现 before_watermark；未证明真人拒绝由此产生 |
 
 历史17/3次事件没有本轮完整原始轨迹，不能补造原因。未来新采集证据只能说明实际覆盖的运行和机制。
 

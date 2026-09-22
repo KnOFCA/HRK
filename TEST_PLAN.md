@@ -2,7 +2,7 @@
 
 ## v0.1.1 规划
 
-输入可靠性与 LI-001～LI-004 的回归范围见 [测试计划](specs/product/input-reliability/test-plan.md)，通过条件见 [规格](specs/product/input-reliability/spec.md)。本轮仅编写文档，按用户明确限制不编码、不执行任何测试或治理检查；本迭代验证状态 NotRun。
+输入可靠性与 LI-001～LI-004 的回归范围见 [测试计划](specs/product/input-reliability/test-plan.md)，通过条件见 [规格](specs/product/input-reliability/spec.md)。TASK-001～003 已完成文档审查、采集、离线重放/最小化工具和对应测试；AC-001 PASS，其余验收尚未完成，真人根因调查留给 TASK-004。
 
 ## 文档迁移验收
 

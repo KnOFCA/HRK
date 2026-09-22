@@ -1,0 +1,20 @@
+适用于 .NET Framework MSBuild 版本 17.14.51+25f168cee
+
+  hrk_base.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_base.lib
+  hrk_audio.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_audio.lib
+  input_trace.cpp
+  hrk_diagnostics.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_diagnostics.lib
+  hrk_timeline.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_timeline.lib
+  hrk_game_reference.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_game_reference.lib
+  hrk_time.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_time.lib
+  hrk_input.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_input.lib
+  hrk_platform_headless.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_platform_headless.lib
+  hrk_render.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_render.lib
+  hrk_replay.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_replay.lib
+  hrk_resource.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_resource.lib
+  hrk_runtime.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_runtime.lib
+  hrk_headless.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_headless.exe
+  input_trace_tests.cpp
+D:\Source\harmonyOSAPP\HRK\tests\input_trace_tests.cpp(39,55): error C2220: 以下警告被视为错误 [D:\Source\harmonyOSAPP\HRK\build\host\hrk_input_trace_tests.vcxproj]
+D:\Source\harmonyOSAPP\HRK\tests\input_trace_tests.cpp(39,55): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [D:\Source\harmonyOSAPP\HRK\build\host\hrk_input_trace_tests.vcxproj]
+  hrk_tests.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_tests.exe

@@ -62,4 +62,4 @@ Feature 使用 `PROD-<NAME>` / `ENG-<NAME>` / `PROC-<NAME>`。条款使用 `<Fea
 
 ## 10. 功能索引
 
-已签收功能为 [HRK v0.1.0](product/rhythm-kernel/spec.md)；下一轮 [v0.1.1 输入可靠性](product/input-reliability/spec.md) 为文档草案，尚未实现或测试。系统索引见 [SPEC](../SPEC.md)。
+已签收功能为 [HRK v0.1.0](product/rhythm-kernel/spec.md)；下一轮 [v0.1.1 输入可靠性](product/input-reliability/spec.md) 已完成 TASK-001～003、AC-001 和离线工具验证；整体实现仍 InProgress，真人根因及后续验收尚未完成。系统索引见 [SPEC](../SPEC.md)。

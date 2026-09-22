@@ -1,5 +1,29 @@
 # 变更记录
 
+## 2026-09-22 CI 治理修复
+
+- 复现规划提交 `06df603` 的 C9 工作流术语缺失；随 TASK-001 定稿规格提交修复，保留严格治理检查。
+- Actions checkout 获取完整历史与 tags，确保新归档证据的稳定引用在 CI 中可解析。
+
+## 2026-09-21 v0.1.1 TASK-003 原始输入调查工具
+
+- 新增主机 `hrk_trace`：严格 JSONL 验证、记录时钟/原调度重放、完整结果差异及拒绝事件依赖闭包最小化；不修改既有游戏输入策略。
+- 新增 RecordedAudioBackend、五组合成单变量对照和 CLI 失败路径测试。主机 CTest 5/5、CLI 100 项与采集 28 项通过，证据见功能 validation。
+- TASK-001～003 完成并提交；真人根因、S4 修复策略及整体验收仍留给后续任务。
+
+## 2026-09-21 v0.1.1 TASK-002 输入诊断采集
+
+- 新增默认关闭的固定容量输入轨迹，关联平台入口/队列/Session/时钟/控制/水位，按 phase、终态和 reason 独立计数；诊断失败不改变游戏行为。
+- 新增冻结、超时重试和不覆盖已有文件的 JSONL 导出；Harmony Native 暴露 beginCapture/endCapture/exportCapture。
+- task002/AC-001 的主机测试、旧 Replay 回归及 Native 编译通过；真实设备采集、根因调查、原始调度工具和修复仍属后续任务。证据见功能 validation。
+
+
+## 2026-09-21 v0.1.1 TASK-001 调查规格定稿
+
+- 完成 [S1 调查契约](../../specs/product/input-reliability/spec.md)：严格 JSONL、采集容量与内存预算、跨线程关联与冻结、原始调度/时钟注入、CLI 及错误语义。
+- 对照现有代码审查并同步设计、任务、测试映射与导航，记录当前用户对 TASK-001 的授权。
+- TASK-001 DONE；文档治理结果见 [验证记录](../../specs/product/input-reliability/validation.md)。产品未编码或运行测试，LI-001～004 与 S4 修复门禁保持未完成。
+
 ## 2026-09-20 v0.1.1 配套文档草案（未实现）
 
 - 新增 [输入可靠性五件套](../../specs/product/input-reliability/spec.md) 与根因调查报告框架，规划 LI-001～LI-004。

@@ -19,14 +19,14 @@
 
 ## 后续优先整改：LateInput（P1，下一迭代优先）
 
-v0.1.1 配套文档已建立：[规格](specs/product/input-reliability/spec.md)、[设计](specs/product/input-reliability/design.md)、[任务](specs/product/input-reliability/tasks.md)、[测试计划](specs/product/input-reliability/test-plan.md)、[验证记录](specs/product/input-reliability/validation.md)、[根因调查报告](specs/product/input-reliability/root-cause.md)。2026-09-20 用户仅授权文档编写，明确不编码、不测试；下列整改项仍为 TODO，未实施或验收。
+v0.1.1 配套文档已建立：[规格](specs/product/input-reliability/spec.md)、[设计](specs/product/input-reliability/design.md)、[任务](specs/product/input-reliability/tasks.md)、[测试计划](specs/product/input-reliability/test-plan.md)、[验证记录](specs/product/input-reliability/validation.md)、[根因调查报告](specs/product/input-reliability/root-cause.md)。2026-09-21 用户先后授权完成 TASK-001～003 并提交已完成工作；调查契约、全链路采集、原始调度/最小化工具与对应主机验证完成，LI-002 采集能力关闭，真人原因及其余整改保持 TODO。
 
 用户本轮明确要求登记；不计入 v0.1.0 新增功能实现。
 
 | 工作项 | 调查与完成条件 | 状态 |
 |---|---|---|
 | LI-001 原因定位 | 区分平台分发延迟、事件乱序、重复事件、音频/输入时钟映射及水位推进；保留可复现输入与时间线，给出有证据的根因 | TODO |
-| LI-002 事件类型 | 对被拒绝的 DOWN/MOVE/UP/CANCEL 分别计数，记录 pointer、原始时间、映射时间、接收时间和拒绝原因；采集方式不得破坏实时路径约束 | TODO |
+| LI-002 事件类型 | 对被拒绝的 DOWN/MOVE/UP/CANCEL 分别计数，记录 pointer、原始时间、映射时间、接收时间和拒绝原因；采集方式不得破坏实时路径约束 | DONE（AC-001；设备性能回归另属 AC-006） |
 | LI-003 判定影响 | 对比接收前原始输入、接受输入和判定结果，确认是否改变 PERFECT/MISS、分数或 pointer 生命周期；不能仅凭已接受 Replay 一致认定无影响 | TODO |
 | LI-004 修复及回归 | 先完成规格与设计评审，再实施修复；覆盖双指、密集 MOVE、暂停恢复、EOF 和不同刷新率；重跑真机与 Headless 并记录残余拒绝的边界 | TODO |
 

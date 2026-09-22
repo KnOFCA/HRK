@@ -4,7 +4,7 @@
 
 ## v0.1.1 本轮规划范围
 
-本轮以 [输入可靠性规格草案](../specs/product/input-reliability/spec.md) 规划 LI-001～LI-004：原始输入轨迹、根因与事件分类、判定/pointer影响、证据驱动修复及真机/Headless回归。当前授权仅限文档，尚未编码和测试。
+本轮以 [输入可靠性规格](../specs/product/input-reliability/spec.md) 规划 LI-001～LI-004：原始输入轨迹、根因与事件分类、判定/pointer影响、证据驱动修复及真机/Headless回归。TASK-001～003 的调查契约、采集及原始调度工具已完成，AC-001 与工具主机验证 PASS；S4 修复策略仍待真人调查与授权。
 
 下方原始愿景中的完整 AudioClock、Calibration 等不自动纳入本次整改；后续另行规格化。
 

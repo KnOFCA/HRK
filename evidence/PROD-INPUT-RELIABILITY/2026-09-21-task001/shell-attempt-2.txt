@@ -1,0 +1,6 @@
+tools/sdd/check.sh: line 3: dirname: command not found
+tools/sdd/check.sh: line 4: tools/validation/lib.sh: No such file or directory
+tools/sdd/check.sh: line 5: sdd_require_cmd: command not found
+tools/sdd/check.sh: line 6: sdd_require_cmd: command not found
+tools/sdd/check.sh: line 7: sdd_require_cmd: command not found
+tools/sdd/check.sh: line 8: SDD_BLOCKED: unbound variable

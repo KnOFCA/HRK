@@ -1,0 +1,11 @@
+[1/11] Building CXX object CMakeFiles/hrk_input.dir/src/kernel/input/input.cpp.o
+[2/11] Building CXX object CMakeFiles/hrk_entry.dir/src/app/composition.cpp.o
+[3/11] Building CXX object CMakeFiles/hrk_runtime.dir/src/kernel/gameplay/session.cpp.o
+[4/11] Building CXX object CMakeFiles/hrk_platform_harmony.dir/src/platform/harmony/backend.cpp.o
+[5/11] Building CXX object CMakeFiles/hrk_diagnostics.dir/src/kernel/diagnostics/input_trace.cpp.o
+[6/11] Building CXX object CMakeFiles/hrk_entry.dir/src/platform/harmony/entry.cpp.o
+[7/11] Linking CXX static library libhrk_diagnostics.a
+[8/11] Linking CXX static library libhrk_input.a
+[9/11] Linking CXX static library libhrk_platform_harmony.a
+[10/11] Linking CXX static library libhrk_runtime.a
+[11/11] Linking CXX shared library libhrk_entry.so

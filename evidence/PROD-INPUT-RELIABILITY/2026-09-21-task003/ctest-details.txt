@@ -1,0 +1,217 @@
+Start testing: Sep 21 15:35 中国标准时间
+----------------------------------------------------------
+1/5 Testing: hrk_tests
+1/5 Test: hrk_tests
+Command: "D:/Source/harmonyOSAPP/HRK/build/host/Debug/hrk_tests.exe"
+Directory: D:/Source/harmonyOSAPP/HRK/build/host
+"hrk_tests" start time: Sep 21 15:35 中国标准时间
+Output:
+----------------------------------------------------------
+REG-NOTHROW-ALLOCATION PASS
+TC-BASE-001 PASS
+TC-BASE-002 PASS
+TC-BASE-003 PASS
+TC-TIME-001 PASS
+TC-TIME-002 PASS
+TC-TIME-003 PASS
+TC-TIME-004 PASS
+TC-TIME-005 PASS
+TC-TIME-006 PASS
+TC-TIME-007 PASS
+TC-TIME-008 PASS
+TC-TL-001 PASS
+TC-TL-002 PASS
+TC-TL-003 PASS
+TC-TL-004 PASS
+TC-TL-005 PASS
+TC-CHART-001 PASS
+TC-CHART-002 PASS
+TC-CHART-003 PASS
+TC-CHART-004 PASS
+TC-IN-001 PASS
+TC-IN-002 PASS
+TC-IN-003 PASS
+TC-IN-004 PASS
+TC-IN-005 PASS
+TC-IN-006 PASS
+TC-IN-007 PASS
+TC-JUDGE-001 PASS
+TC-JUDGE-002 PASS
+TC-JUDGE-003 PASS
+TC-JUDGE-004 PASS
+TC-JUDGE-005 PASS
+TC-JUDGE-006 PASS
+TC-JUDGE-007 PASS
+TC-JUDGE-008 PASS
+TC-JUDGE-009 PASS
+TC-SCORE-001 PASS
+TC-SCORE-002 PASS
+TC-SCORE-003 PASS
+TC-GAME-001 PASS
+TC-GAME-002 PASS
+TC-GAME-003 PASS
+TC-GAME-004 PASS
+TC-AUDIO-001 PASS
+TC-AUDIO-002 PASS
+TC-AUDIO-003 PASS
+TC-AUDIO-004 PASS
+TC-AUDIO-005 PASS
+TC-AUDIO-006 PASS
+TC-AUDIO-007 PASS
+TC-REP-001 PASS
+TC-REP-002 PASS
+TC-REP-003 PASS
+TC-REP-004 PASS
+TC-REP-005 PASS
+TC-DET-001 PASS
+TC-DET-002 PASS
+TC-DET-003 PASS
+TC-DET-004 PASS
+TC-DET-005 PASS
+TC-AUTO-001 PASS
+TC-REN-001 PASS
+TC-REN-003 PASS
+TC-HEAD-001 PASS
+TC-HEAD-002 PASS
+TC-HEAD-003 PASS
+TC-RES-001 PASS
+TC-RES-002 PASS
+TC-DIAG-001 PASS
+TC-DIAG-002 PASS
+TC-DIAG-003 PASS
+TC-STAB-001 PASS
+TC-STAB-002 PASS
+TC-STAB-003 PASS
+TC-PERF-003 PASS
+TC-ERR-001 PASS
+TC-ERR-002 PASS
+TC-ERR-003 PASS
+REG-REPLAY-CORRUPTION PASS
+REG-REPLAY-COMPATIBILITY PASS
+REG-LATE-INPUT PASS
+REG-SEEK-REBUILD PASS
+REG-PLAY-RECORD-REPLAY PASS
+REG-PLAY-SEEK-BRANCH PASS
+REG-EMPTY-CHART PASS
+REG-CLOCK-DEVICE-PAIR PASS
+REG-QUEUE-CONCURRENCY PASS
+TC-RT-002 PASS
+Memory session baseline=1384448 end=1384448
+TC-MEM-001 PASS
+Memory replay baseline=1384448 end=1384448
+TC-MEM-002 PASS
+REG-FRAME-CAPTURE PASS
+REG-DEVICE-DELIVERY-GRACE PASS
+TOTAL 93 PASS 0 FAIL
+<end of output>
+Test time =   1.44 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_tests" end time: Sep 21 15:35 中国标准时间
+"hrk_tests" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/5 Testing: hrk_input_trace_tests
+2/5 Test: hrk_input_trace_tests
+Command: "D:/Nodejs/node.exe" "D:/Source/harmonyOSAPP/HRK/tests/check-input-trace.mjs" "D:/Source/harmonyOSAPP/HRK/build/host/Debug/hrk_input_trace_tests.exe" "D:/Source/harmonyOSAPP/HRK/build/host/input-trace-tests"
+Directory: D:/Source/harmonyOSAPP/HRK/build/host
+"hrk_input_trace_tests" start time: Sep 21 15:35 中国标准时间
+Output:
+----------------------------------------------------------
+TRACE-DEFAULT-AND-STATE PASS
+TRACE-ALLOCATION-FAILURE PASS
+slotBytes=240 captureAllocated=31525232 measuredBeginBytes=31523168
+TRACE-MEMORY-AND-NO-HOT-ALLOCATION PASS
+TRACE-PHASES-AND-BRANCHES PASS
+TRACE-PENDING-RETAINS-MAPPING PASS
+TRACE-PENDING-EACH-PHASE-AT-EOF PASS
+TRACE-STALE-AND-MAPPED-RANGE PASS
+TRACE-INVALID-INPUT-AND-STATE PASS
+TRACE-QUEUE-CAPACITIES PASS
+TRACE-FAILED-CONTROL-CLEAR-AND-INACTIVE-DRAIN PASS
+TRACE-CLEAR-SNAPSHOT-BOUNDARY PASS
+TRACE-EPOCHS-AND-POINTER-BOUNDARIES PASS
+TRACE-AUDIO-EXACT-QUERY-OBSERVATION PASS
+TRACE-PLATFORM-CAPACITY PASS
+TRACE-SESSION-CAPACITY PASS
+TRACE-DIAGNOSTIC-FAILURE-PRESERVES-GAME PASS
+TRACE-EXPORT-FAILURE-RETRY-NO-CLOBBER PASS
+TRACE-FREEZE-WRITER-TIMEOUT-RETRY PASS
+TRACE-FREEZE-COMMIT-BEFORE-DEADLINE PASS
+TRACE-CONCURRENT-PRODUCERS-INCOMPLETE PASS
+TRACE-CONCURRENT-STORAGE PASS
+TRACE-DESTROY-WAITS-FOR-WRITER PASS
+TRACE-OBSERVES-DIAGNOSTIC-COMMANDS PASS
+TRACE-COUNTER-OVERFLOW PASS
+TRACE-MISSING-REFERENCE-AND-BOUNDARY PASS
+TRACE-RESET-EXCLUDES-OLD-EVENTS PASS
+TRACE-REPLAY-FULL-INTERNAL-PAUSE PASS
+TRACE-REPLAY-INVESTIGATION-PAIRS PASS
+28 passed, 0 failed
+Exporter schema/references/accounting: 26 files PASS
+Artifacts: D:\Source\harmonyOSAPP\HRK\build\host\input-trace-tests\run-LOs30z
+<end of output>
+Test time =   6.49 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_input_trace_tests" end time: Sep 21 15:36 中国标准时间
+"hrk_input_trace_tests" time elapsed: 00:00:06
+----------------------------------------------------------
+
+3/5 Testing: hrk_trace_cli
+3/5 Test: hrk_trace_cli
+Command: "D:/Nodejs/node.exe" "D:/Source/harmonyOSAPP/HRK/tests/check-trace-cli.mjs" "D:/Source/harmonyOSAPP/HRK/build/host/Debug/hrk_trace.exe" "D:/Source/harmonyOSAPP/HRK/build/host/Debug/hrk_input_trace_tests.exe" "D:/Source/harmonyOSAPP/HRK/build/host/trace-cli-tests"
+Directory: D:/Source/harmonyOSAPP/HRK
+"hrk_trace_cli" start time: Sep 21 15:36 中国标准时间
+Output:
+----------------------------------------------------------
+Trace CLI: 100 checks PASS; five original/control pairs; minimization replay PASS
+Capture artifacts: D:\Source\harmonyOSAPP\HRK\build\host\trace-cli-tests\run-CS9snN
+CLI artifacts: D:\Source\harmonyOSAPP\HRK\build\host\trace-cli-tests\cli-JTfwfV
+<end of output>
+Test time =  34.10 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_trace_cli" end time: Sep 21 15:36 中国标准时间
+"hrk_trace_cli" time elapsed: 00:00:34
+----------------------------------------------------------
+
+4/5 Testing: hrk_architecture
+4/5 Test: hrk_architecture
+Command: "D:/Nodejs/node.exe" "D:/Source/harmonyOSAPP/HRK/tools/check-architecture.mjs"
+Directory: D:/Source/harmonyOSAPP/HRK/build/host
+"hrk_architecture" start time: Sep 21 15:36 中国标准时间
+Output:
+----------------------------------------------------------
+TC-ARCH-001 PASS (20 files)
+TC-ARCH-002 PASS (20 files)
+TC-ARCH-003 PASS (2 files)
+TC-ARCH-004 PASS (7 files)
+TC-ARCH-005 PASS (38 files)
+TC-REN-002 PASS (2 files)
+Architecture: PASS
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_architecture" end time: Sep 21 15:36 中国标准时间
+"hrk_architecture" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: hrk_headless_fixture
+5/5 Test: hrk_headless_fixture
+Command: "D:/Nodejs/node.exe" "D:/Source/harmonyOSAPP/HRK/tools/check-headless.mjs" "D:/Source/harmonyOSAPP/HRK/build/host/Debug/hrk_headless.exe"
+Directory: D:/Source/harmonyOSAPP/HRK/build/host
+"hrk_headless_fixture" start time: Sep 21 15:36 中国标准时间
+Output:
+----------------------------------------------------------
+TC-DET-001 CLI fixed fixture + complete expected JSON PASS
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"hrk_headless_fixture" end time: Sep 21 15:36 中国标准时间
+"hrk_headless_fixture" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 21 15:36 中国标准时间

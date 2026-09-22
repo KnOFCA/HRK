@@ -12,7 +12,7 @@ Harmony 应用外壳采用 Stage / ArkTS / ArkUI，Native 层承载实时运行�
 | 路径 | 职责 |
 |---|---|
 | specs/product/rhythm-kernel | v0.1.0 规格五件套及验收契约 |
-| specs/product/input-reliability | v0.1.1 输入可靠性五件套及根因报告框架；[设计草案](specs/product/input-reliability/design.md)，未实施 |
+| specs/product/input-reliability | v0.1.1 输入可靠性五件套及根因报告框架；[调查设计](specs/product/input-reliability/design.md)，TASK-002 采集和 TASK-003 离线工具已实现 |
 | specs/engineering、specs/process | 未来工程与流程功能入口，当前无实例 |
 | src | kernel、interface、games、platform、app 的 C++ / ArkTS 实现 |
 | tests | 按 AC 建立的主机自动化测试、固定夹具与设备步骤 |

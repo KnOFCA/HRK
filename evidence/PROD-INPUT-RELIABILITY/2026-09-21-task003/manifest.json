@@ -1,0 +1,338 @@
+{
+  "feature_id": "PROD-INPUT-RELIABILITY",
+  "run_id": "2026-09-21-task003",
+  "timestamp_utc": "2026-09-22T06:53:54.047Z",
+  "overall": "PASS",
+  "scope": "TASK-003 / TEST-003 synthetic runner investigation and TEST-002 external parser; not AC-002 human root-cause acceptance.",
+  "authorization": "用户要求完成 v0.1.1 task003 并提交已完成工作；随后要求检查修复 GitHub Actions。",
+  "environment": {
+    "os": "Windows_NT 10.0.26200",
+    "node": "v24.18.0",
+    "host_compiler": "MSVC 19.44 / VS 2022 Debug /W4 /WX"
+  },
+  "validation_ref": "refs/tags/v0.1.0",
+  "base_commit": "8b9abf14f72e0ce5535d62965d613d3a214bcd35",
+  "source_baseline_commit": "06df6030df54a2b81d8e26d7f33148d880280f61",
+  "implementation_commit": null,
+  "validator_commit": null,
+  "validation_commit": null,
+  "implementation_revision": "sha256:06101d895e8388f210bb3d188c8added6c121ff7aae9e22e55f541296cf5e79c",
+  "specification_revision": "sha256:96c05e5420f99ce9462489fe1b64b51225a7a6f7262b591f3ab2bd7bdb578ec4",
+  "design_revision": "sha256:548d3261ae7e97063e2091af0ee16ded46c0c9a8b926d96f4d49c60d9c052a90",
+  "validator_revision": {
+    "tests/input_trace_tests.cpp": "sha256:f4a720fdfed529a16f355da4bc29c47adf8aa2a3c19ff32c6a29c12150343f22",
+    "tests/check-input-trace.mjs": "sha256:d89770645da6264d78fa3cc24baaf79820af5fd4b8cd72031063cb2ff27c70a4",
+    "tests/check-trace-cli.mjs": "sha256:c22eefcaea6983ffcb88ccc263ad373918ab736c3bd028fcc95265acf654d56e",
+    "tools/sdd/check.sh": "sha256:f7b2b9ada95b46699dda38ada73c442503b10e67b7d2d61773311dd2924000cf"
+  },
+  "revision_note": "Stable v0.1.0 tag is only a reconstruction base. Exact implementation, specification and validator bytes are preserved in workspace-delta.json.gz. No unreachable commit is used.",
+  "commands": [
+    {
+      "command": "cmake --build build/host --config Debug",
+      "exit_code": 0,
+      "artifact": "host-build.txt"
+    },
+    {
+      "command": "ctest --test-dir build/host -C Debug --output-on-failure",
+      "exit_code": 0,
+      "artifact": "ctest.txt"
+    },
+    {
+      "command": "VS2022 clang++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -fsyntax-only -isystem C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/include -Isrc tools/input-trace/main.cpp src/platform/headless/recorded_audio.cpp",
+      "exit_code": 0
+    },
+    {
+      "command": "bash tools/sdd/check.sh",
+      "exit_code": 0,
+      "artifact": "sdd-check.txt"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0-original.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0-original.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0-control.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0-control.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe compare --expected evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0-original.result.json --actual evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0-control.result.json --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-0.diff.json",
+      "exit_code": 1,
+      "note": "Expected difference between single-variable synthetic pair"
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1-original.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1-original.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1-control.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1-control.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe compare --expected evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1-original.result.json --actual evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1-control.result.json --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-1.diff.json",
+      "exit_code": 1,
+      "note": "Expected difference between single-variable synthetic pair"
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2-original.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2-original.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2-control.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2-control.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe compare --expected evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2-original.result.json --actual evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2-control.result.json --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-2.diff.json",
+      "exit_code": 1,
+      "note": "Expected difference between single-variable synthetic pair"
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3-original.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3-original.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3-control.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3-control.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe compare --expected evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3-original.result.json --actual evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3-control.result.json --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-3.diff.json",
+      "exit_code": 1,
+      "note": "Expected difference between single-variable synthetic pair"
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4-original.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4-original.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe replay --trace evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4-control.jsonl --chart evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/chart.json --audio evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/audio.wav --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4-control.result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "build/host/Debug/hrk_trace.exe compare --expected evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4-original.result.json --actual evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4-control.result.json --out evidence/PROD-INPUT-RELIABILITY/2026-09-21-task003/synthetic/investigation-4.diff.json",
+      "exit_code": 1,
+      "note": "Expected difference between single-variable synthetic pair"
+    }
+  ],
+  "results": {
+    "host_ctest": "5/5 PASS",
+    "capture_cpp": "28/28 PASS",
+    "exported_jsonl": "26/26 PASS",
+    "trace_cli": "100 checks PASS",
+    "synthetic_pairs": "5/5 PASS",
+    "minimize": "PASS; unrelated status action removed, source event 2 before_watermark retained and replay verified",
+    "AC_002": "NotRun: human investigation remains TASK-004",
+    "device": "NotRun",
+    "linux_sanitizer": "NotRun locally; remote CI follow-up separate",
+    "release": "NotAccepted"
+  },
+  "artifacts": [
+    {
+      "path": "ctest-details.txt",
+      "sha256": "ab16973cc2523196edd08872c71565fbb6d763b18f6a9b54198fed5ea54cad43",
+      "bytes": 7128
+    },
+    {
+      "path": "ctest.txt",
+      "sha256": "98ed17c47ad0298eb959323a1f45b0012edabbd823596ffb02214eb5f58d5296",
+      "bytes": 720
+    },
+    {
+      "path": "host-build.txt",
+      "sha256": "55c8fdcda727a5712f5f0800aa74fc9fdeb448394416759b90868620a107cf5b",
+      "bytes": 1486
+    },
+    {
+      "path": "minimal/audio.wav",
+      "sha256": "46ea71da247c66a543a722efb94bc0008c5448bc6b03da650b8d818627c196ac",
+      "bytes": 1536044
+    },
+    {
+      "path": "minimal/chart.json",
+      "sha256": "63261609705b35c920e682e8b631c11cc4300bfa14bae6de6393adf6890c8efc",
+      "bytes": 40
+    },
+    {
+      "path": "minimal/minimization.json",
+      "sha256": "712a9836dacdb073b14622a7612c67b2815ff3d94476436816dd7bb02c22b303",
+      "bytes": 710
+    },
+    {
+      "path": "minimal/result.json",
+      "sha256": "733c5a849a5e012547f21b18d164bb8c13eec73e94a94a9a744ecae8877afaf9",
+      "bytes": 743
+    },
+    {
+      "path": "minimal/trace.jsonl",
+      "sha256": "98be6f24c7128abdd0a9db053a2568c7099442c90a93fd0770633ce25f04cfe3",
+      "bytes": 12179
+    },
+    {
+      "path": "sdd-check.txt",
+      "sha256": "a27ebcddc4ca2d3ad6634a2586dcc727d02f25cf31fea1f8eca5087edcc27380",
+      "bytes": 4317
+    },
+    {
+      "path": "synthetic/audio.wav",
+      "sha256": "46ea71da247c66a543a722efb94bc0008c5448bc6b03da650b8d818627c196ac",
+      "bytes": 1536044
+    },
+    {
+      "path": "synthetic/chart.json",
+      "sha256": "63261609705b35c920e682e8b631c11cc4300bfa14bae6de6393adf6890c8efc",
+      "bytes": 40
+    },
+    {
+      "path": "synthetic/clocks.jsonl",
+      "sha256": "0e8890fd98201b36a08b15a985e70a772c0c5c96fb946fd188425bfaebd25f79",
+      "bytes": 7726
+    },
+    {
+      "path": "synthetic/empty.jsonl",
+      "sha256": "dfdc96bc540dfec4c4cc759ee6487aa625ba1ce9a574074ce86fe1a7225bb44d",
+      "bytes": 1171
+    },
+    {
+      "path": "synthetic/eof-pending.jsonl",
+      "sha256": "df4f4a421c13c3c12a32cd29349ebfe073810b3274e052909a37263f725fae50",
+      "bytes": 8090
+    },
+    {
+      "path": "synthetic/investigation-0-control.jsonl",
+      "sha256": "e02a4ff4c42810bae77c1433c2a37cd988d9c3e84d0c35828b5491c9bc25c103",
+      "bytes": 12812
+    },
+    {
+      "path": "synthetic/investigation-0-control.result.json",
+      "sha256": "345ff3bc59781701fe25d0731401511a976c96c962d0a76741f9078eb61c7d27",
+      "bytes": 792
+    },
+    {
+      "path": "synthetic/investigation-0-original.jsonl",
+      "sha256": "2999398801d713addcc640da983732b21d8becd928ca543337e3bc6345468ba7",
+      "bytes": 12918
+    },
+    {
+      "path": "synthetic/investigation-0-original.result.json",
+      "sha256": "57cb4e12b30865e5533e410a5a9392734ea271c0e09b6571f42a383d555a6155",
+      "bytes": 809
+    },
+    {
+      "path": "synthetic/investigation-0.diff.json",
+      "sha256": "cf0d018771b2d8c062a039b0f4c1d39c0a99b0af9e3664e96b2b90badb4fef39",
+      "bytes": 87
+    },
+    {
+      "path": "synthetic/investigation-1-control.jsonl",
+      "sha256": "5ab3b725dea876f559db26726c729df6d823145a76e92b9c9e5fb19ff5c2ccde",
+      "bytes": 8629
+    },
+    {
+      "path": "synthetic/investigation-1-control.result.json",
+      "sha256": "662b697f866ce8af55bd1f1a0112f40d9d835bd81eb24e1996c86fd2f5302c47",
+      "bytes": 641
+    },
+    {
+      "path": "synthetic/investigation-1-original.jsonl",
+      "sha256": "1c510189e12e50c417fb81f721230b2e83c09efd15987d686607506446bc4ca4",
+      "bytes": 9789
+    },
+    {
+      "path": "synthetic/investigation-1-original.result.json",
+      "sha256": "ed97be89b8b3bdfe69f9ed34c3f0fe3ed26a46bd34608f82cf9da285692e6e79",
+      "bytes": 731
+    },
+    {
+      "path": "synthetic/investigation-1.diff.json",
+      "sha256": "e3aaf8e08c7e9be2c523c95eb3ea39f617440a9e743b596b7a40b623fe0554cc",
+      "bytes": 84
+    },
+    {
+      "path": "synthetic/investigation-2-control.jsonl",
+      "sha256": "1785155c374c1e96004b79ad5b4c5baf054d04121b77d6487df7e169cdd46d0c",
+      "bytes": 8629
+    },
+    {
+      "path": "synthetic/investigation-2-control.result.json",
+      "sha256": "662b697f866ce8af55bd1f1a0112f40d9d835bd81eb24e1996c86fd2f5302c47",
+      "bytes": 641
+    },
+    {
+      "path": "synthetic/investigation-2-original.jsonl",
+      "sha256": "8d4a8dfd923e46f6010d3ca2e9d504d30d80034ea93b526ece01b5db234c90b8",
+      "bytes": 12069
+    },
+    {
+      "path": "synthetic/investigation-2-original.result.json",
+      "sha256": "cd7530d6d24c59047826e35a5d14bd835e60e6c431c84013d5775fb909a5d87a",
+      "bytes": 715
+    },
+    {
+      "path": "synthetic/investigation-2.diff.json",
+      "sha256": "2f4f705182cc6f0b188fccd8c245451e69e0a249241b2d5aa45f4a82330e8dc0",
+      "bytes": 84
+    },
+    {
+      "path": "synthetic/investigation-3-control.jsonl",
+      "sha256": "e30f59aea86462ba2e608e03c9ddc6432a7c64290b5defadfbd27cd397ce967d",
+      "bytes": 8645
+    },
+    {
+      "path": "synthetic/investigation-3-control.result.json",
+      "sha256": "662b697f866ce8af55bd1f1a0112f40d9d835bd81eb24e1996c86fd2f5302c47",
+      "bytes": 641
+    },
+    {
+      "path": "synthetic/investigation-3-original.jsonl",
+      "sha256": "0eab813c43a63942650ec07d40328d5edec7fd2168c3c48ce2ddd6f846ea4653",
+      "bytes": 8641
+    },
+    {
+      "path": "synthetic/investigation-3-original.result.json",
+      "sha256": "5ba23d785b72e1569083867914bc6abdc45890e77fc9aab01e0c03b8077a0fa4",
+      "bytes": 646
+    },
+    {
+      "path": "synthetic/investigation-3.diff.json",
+      "sha256": "da74a47de0a5081c78ed9bcca12595c6fbc55e6d95cbd9cb90adf4626e451711",
+      "bytes": 81
+    },
+    {
+      "path": "synthetic/investigation-4-control.jsonl",
+      "sha256": "a72639f5b5fc8d72b769f8ff8afc638741264a6d6e8f20a714e526a562cdeac0",
+      "bytes": 12131
+    },
+    {
+      "path": "synthetic/investigation-4-control.result.json",
+      "sha256": "cd7530d6d24c59047826e35a5d14bd835e60e6c431c84013d5775fb909a5d87a",
+      "bytes": 715
+    },
+    {
+      "path": "synthetic/investigation-4-original.jsonl",
+      "sha256": "aa83bc5adab6513e7be756fd42581911bf6e8e05d2805f6db0dc0d611c39008f",
+      "bytes": 12128
+    },
+    {
+      "path": "synthetic/investigation-4-original.result.json",
+      "sha256": "899a9243924802cbca8c7310abb16d479c812dcb94a71ffe00d360698451c42f",
+      "bytes": 743
+    },
+    {
+      "path": "synthetic/investigation-4.diff.json",
+      "sha256": "8729df4eb4a07ee958e645887ddec3f18550d52ef40101d706a755025ae6184e",
+      "bytes": 87
+    },
+    {
+      "path": "synthetic/pending.jsonl",
+      "sha256": "beec822c775c0e225c77d9a18c41dfce8fe26ab6fb5ddd92821ea84c0c7c7c01",
+      "bytes": 10326
+    },
+    {
+      "path": "workspace-delta.json.gz",
+      "sha256": "28c302602cdf0eb68f090e4b5cc8a61e58272a372465e52a01790d0105bc6eca",
+      "bytes": 1180094
+    }
+  ]
+}

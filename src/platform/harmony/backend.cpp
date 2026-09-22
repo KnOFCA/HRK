@@ -55,18 +55,22 @@ int32_t OHAudioBackend::write(OH_AudioRenderer*,void* context,void* buffer,int32
 int32_t OHAudioBackend::interrupt(OH_AudioRenderer*,void* c,OH_AudioInterrupt_ForceType,OH_AudioInterrupt_Hint){static_cast<OHAudioBackend*>(c)->interrupted_=true;return 0;}
 int32_t OHAudioBackend::error(OH_AudioRenderer*,void* c,OH_AudioStream_Result){static_cast<OHAudioBackend*>(c)->failed_=true;return 0;}
 void HarmonyInputBackend::touch(OH_NativeXComponent* component,void* window){
+  // The composition owns trace storage for the lifetime of this backend.
+  InputTrace::Writer writer(trace_);const bool capturing=static_cast<bool>(writer);
+  const TimeNs received=capturing?monotonicNow():0;const uint64_t batch=capturing?trace_->batch():0;
   OH_NativeXComponent_TouchEvent event{};uint64_t w=0,h=0;
   if(OH_NativeXComponent_GetTouchEvent(component,window,&event)!=OH_NATIVEXCOMPONENT_RESULT_SUCCESS || OH_NativeXComponent_GetXComponentSize(component,window,&w,&h)!=OH_NATIVEXCOMPONENT_RESULT_SUCCESS || !w || !h)return;
-  auto submit=[&](int32_t id,OH_NativeXComponent_TouchEventType type,float x,float y,int64_t timestamp){
-    InputPhase phase;
-    switch(type){case OH_NATIVEXCOMPONENT_DOWN:phase=InputPhase::Down;break;case OH_NATIVEXCOMPONENT_MOVE:phase=InputPhase::Move;break;case OH_NATIVEXCOMPONENT_UP:phase=InputPhase::Up;break;case OH_NATIVEXCOMPONENT_CANCEL:phase=InputPhase::Cancel;break;default:return;}
+  auto submit=[&](int32_t id,OH_NativeXComponent_TouchEventType type,float x,float y,int64_t timestamp,uint32_t point){
+    InputPhase phase;bool validPhase=true;
+    switch(type){case OH_NATIVEXCOMPONENT_DOWN:phase=InputPhase::Down;break;case OH_NATIVEXCOMPONENT_MOVE:phase=InputPhase::Move;break;case OH_NATIVEXCOMPONENT_UP:phase=InputPhase::Up;break;case OH_NATIVEXCOMPONENT_CANCEL:phase=InputPhase::Cancel;break;default:phase=static_cast<InputPhase>(static_cast<uint32_t>(type));validPhase=false;break;}
     RawInputEvent raw{static_cast<uint32_t>(id),phase,{std::clamp(x/static_cast<float>(w),0.f,1.f),std::clamp(y/static_cast<float>(h),0.f,1.f)},timestamp};
-    if(!queue_.push(raw))++dropped_;
+    if(!validPhase){queue_.rejectInvalid(raw,received,batch,point,capturing);return;}
+    queue_.submit(raw,received,batch,point,capturing);
   };
   // DOWN/UP designate only the changed pointer. MOVE includes each pointer's original timestamp.
   if(event.type==OH_NATIVEXCOMPONENT_MOVE || event.type==OH_NATIVEXCOMPONENT_CANCEL){
-    for(uint32_t i=0;i<std::min<uint32_t>(event.numPoints,OH_NATIVE_XCOMPONENT_MAX_TOUCH_POINTS_NUMBER);++i){const auto& p=event.touchPoints[i];submit(p.id,event.type,p.x,p.y,p.timeStamp);}
-  }else submit(event.id,event.type,event.x,event.y,event.timeStamp);
+    for(uint32_t i=0;i<std::min<uint32_t>(event.numPoints,OH_NATIVE_XCOMPONENT_MAX_TOUCH_POINTS_NUMBER);++i){const auto& p=event.touchPoints[i];submit(p.id,event.type,p.x,p.y,p.timeStamp,i);}
+  }else submit(event.id,event.type,event.x,event.y,event.timeStamp,0);
 }
 namespace {
 GLuint shader(GLenum kind,const char* source){GLuint s=glCreateShader(kind);glShaderSource(s,1,&source,nullptr);glCompileShader(s);GLint ok=0;glGetShaderiv(s,GL_COMPILE_STATUS,&ok);if(!ok){glDeleteShader(s);return 0;}return s;}

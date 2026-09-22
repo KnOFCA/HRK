@@ -1,5 +1,6 @@
 #pragma once
 #include "interface/platform/platform.h"
+#include "kernel/diagnostics/input_trace.h"
 #include <ohaudio/native_audiostreambuilder.h>
 #include <ohaudio/native_audiorenderer.h>
 #include <ace/xcomponent/native_interface_xcomponent.h>
@@ -23,11 +24,14 @@ public:
   bool needsPause() {return interrupted_.exchange(false) || failed_.load();}
 };
 class HarmonyInputBackend : public IInputBackend {
-  FixedQueue<RawInputEvent,2048> queue_; std::atomic<uint64_t> dropped_{0};
+  TracedPlatformQueue queue_; InputTrace* trace_=nullptr;
 public:
+  void setTrace(InputTrace* t){trace_=t;queue_.setTrace(t);}
   void touch(OH_NativeXComponent*,void*);
-  bool poll(RawInputEvent& e) override{return queue_.pop(e);} void clear() override{queue_.clear();}
-  uint64_t dropped() const{return dropped_.load();}
+  bool poll(RawInputEvent& e) override{InputEnvelope v;if(!queue_.poll(v))return false;InputTrace::Transfer action(trace_);if(trace_ && trace_->active())trace_->platformPoll(v);e=v.raw;return true;}
+  bool pollTraced(InputEnvelope& e){return queue_.poll(e);}
+  void clear() override{queue_.clear();}
+  uint64_t dropped() const{return queue_.dropped();}
 };
 class GlesRenderBackend : public IRenderBackend, public IRenderSurface {
   EGLDisplay display_=EGL_NO_DISPLAY; EGLContext context_=EGL_NO_CONTEXT; EGLSurface surface_=EGL_NO_SURFACE;

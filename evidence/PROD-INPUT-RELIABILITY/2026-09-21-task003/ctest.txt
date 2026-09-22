@@ -1,0 +1,16 @@
+Internal ctest changing into directory: D:/Source/harmonyOSAPP/HRK/build/host
+Test project D:/Source/harmonyOSAPP/HRK/build/host
+    Start 1: hrk_tests
+1/5 Test #1: hrk_tests ........................   Passed    1.44 sec
+    Start 2: hrk_input_trace_tests
+2/5 Test #2: hrk_input_trace_tests ............   Passed    6.49 sec
+    Start 3: hrk_trace_cli
+3/5 Test #3: hrk_trace_cli ....................   Passed   34.10 sec
+    Start 4: hrk_architecture
+4/5 Test #4: hrk_architecture .................   Passed    0.07 sec
+    Start 5: hrk_headless_fixture
+5/5 Test #5: hrk_headless_fixture .............   Passed    0.07 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =  42.18 sec

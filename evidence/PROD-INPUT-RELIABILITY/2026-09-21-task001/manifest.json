@@ -1,0 +1,87 @@
+{
+  "feature_id": "PROD-INPUT-RELIABILITY",
+  "run_id": "2026-09-21-task001",
+  "timestamp_utc": "2026-09-21T00:45:55.3553290Z",
+  "overall": "PASS",
+  "scope": "TASK-001 / TEST-009: S1 specification and design review plus documentation governance only; no product AC executed",
+  "authorization": "当前会话用户：完成 v0.1.1 task001；范围为 S1 调查契约，未执行后续实现任务，未批准 S4 行为修复",
+  "environment": {
+    "os": "Microsoft Windows NT 10.0.26200.0",
+    "node": "v24.18.0",
+    "git": "git version 2.55.0.windows.3",
+    "shell": "Git for Windows Bash login shell from PowerShell"
+  },
+  "source_baseline_commit": "06df6030df54a2b81d8e26d7f33148d880280f61",
+  "validation_ref": "refs/tags/v0.1.0",
+  "base_commit": "d0bdebc988e13f9935c5a2057fff73cee5cb0399",
+  "implementation_commit": null,
+  "validator_commit": null,
+  "validation_commit": null,
+  "implementation_revision": "unchanged product source; exact review inputs reconstruct from stable base plus workspace-delta.json",
+  "specification_revision": "sha256:ec2e59e555c3001e31295796a8d1775d406e521fe947d0829cd22aa5fe2dc0cf",
+  "design_revision": "sha256:977c7d99d3d871340c76226157b4a08768ca866c57c00add909cd77bedd9615c",
+  "validator_revision": "sha256:f7b2b9ada95b46699dda38ada73c442503b10e67b7d2d61773311dd2924000cf",
+  "revision_note": "The stable tag is the reconstruction base, not the changed specification revision. workspace-delta.json contains exact bytes of every tracked path differing from the tag, including prior changes and this task. Restore that delta over v0.1.0, then copy these evidence artifacts to reproduce the reviewed workspace. No uncommitted or unreachable commit is used as the evidence source.",
+  "commands": [
+    {
+      "exit_code": 1,
+      "command": "& 'C:/Program Files/Git/bin/bash.exe' tools/sdd/check.sh",
+      "artifact": "shell-attempt-1.txt",
+      "note": "Missing dirname; shell environment not initialized"
+    },
+    {
+      "exit_code": 1,
+      "command": "& 'C:/Program Files/Git/bin/bash.exe' tools/sdd/check.sh",
+      "artifact": "shell-attempt-2.txt",
+      "note": "PATH prefix alone did not resolve shell environment"
+    },
+    {
+      "exit_code": 1,
+      "command": "& 'C:/Program Files/Git/bin/bash.exe' -lc 'bash tools/sdd/check.sh'",
+      "artifact": "sdd-before-correction.txt",
+      "note": "Approval status pairing and Workflow Step declaration corrected in specification"
+    },
+    {
+      "exit_code": 0,
+      "command": "& 'C:/Program Files/Git/bin/bash.exe' -lc 'bash tools/sdd/check.sh'",
+      "artifact": "sdd-check.txt"
+    }
+  ],
+  "results": {
+    "sdd_lint": "PASS",
+    "markdown_links": "PASS",
+    "provenance": "PASS",
+    "validator_tests": "22/22 PASS",
+    "required_inputs": "43/43 PASS",
+    "template_dryrun": "PASS",
+    "product_acceptance": "NotRun",
+    "product_implementation": "NotStarted"
+  },
+  "artifacts": [
+    {
+      "path": "sdd-before-correction.txt",
+      "sha256": "2183dcbdbefe437766eb22d6d408f14c32dca8a4676cdd65e9c0bcce850af18f",
+      "bytes": 7523
+    },
+    {
+      "path": "sdd-check.txt",
+      "sha256": "8354bacbd184ea89627aa8c9eecba76c0063c8a14d8b0e623d6b0f0eee604ddf",
+      "bytes": 4317
+    },
+    {
+      "path": "shell-attempt-1.txt",
+      "sha256": "985e9f4f0259c67efa5a040499217f8ad4dd59415a314871f86dfcc945ec4f87",
+      "bytes": 387
+    },
+    {
+      "path": "shell-attempt-2.txt",
+      "sha256": "985e9f4f0259c67efa5a040499217f8ad4dd59415a314871f86dfcc945ec4f87",
+      "bytes": 387
+    },
+    {
+      "path": "workspace-delta.json",
+      "sha256": "41ae751eb6d7462caaee7ed17370f6c71b467e0833251f020693ec3c5d68fde0",
+      "bytes": 156654
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+适用于 .NET Framework MSBuild 版本 17.14.51+25f168cee
+
+  hrk_base.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_base.lib
+  hrk_audio.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_audio.lib
+  hrk_diagnostics.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_diagnostics.lib
+  hrk_timeline.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_timeline.lib
+  hrk_game_reference.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_game_reference.lib
+  hrk_time.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_time.lib
+  hrk_input.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_input.lib
+  hrk_platform_headless.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_platform_headless.lib
+  hrk_render.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_render.lib
+  hrk_replay.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_replay.lib
+  hrk_resource.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_resource.lib
+  hrk_runtime.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_runtime.lib
+  hrk_headless.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_headless.exe
+  hrk_input_trace_tests.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_input_trace_tests.exe
+  hrk_tests.vcxproj -> D:\Source\harmonyOSAPP\HRK\build\host\Debug\hrk_tests.exe

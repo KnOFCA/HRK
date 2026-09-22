@@ -1,0 +1,102 @@
+PASS     dependency available: node
+PASS     dependency available: git
+PASS     dependency available: bash
+
+===== SDD lint =====
+===== SDD lint =====
+features=2 markdown=56 links=184 manifests=5
+PASS  未发现 SDD 结构性问题
+
+===== Markdown links =====
+
+链接检查: 已检查=184 失效=0 输入缺失=0
+
+===== Evidence provenance =====
+PASS     dependency available: node
+PASS     dependency available: git
+Evidence manifests=5; failures=0
+
+===== Validator tests =====
+✔ checkLinks: valid input passes (2.1829ms)
+✔ checkLinks: broken link fails (1.0533ms)
+✔ checkLinks: missing input file fails (never silently skipped) (0.823ms)
+✔ checkLinks: wrong path fails (1.1695ms)
+✔ lint: valid fixture has no violations (6.6932ms)
+✔ lint: invalid status is rejected (4.9027ms)
+✔ lint: missing required metadata is rejected (4.8646ms)
+✔ lint: forged Approved without approver is rejected (4.7194ms)
+✔ lint: duplicate canonical ID is rejected (10.9212ms)
+✔ lint: numeric inconsistency is rejected (5.2488ms)
+✔ lint: SPEC->DESIGN requirement dependency is rejected (4.2132ms)
+✔ lint: unexplained canonical ID reference is rejected (4.0891ms)
+✔ lint: missing feature document is rejected (4.159ms)
+✔ shell lib: missing dependency yields BLOCKED (exit 2) (25.8541ms)
+✔ shell lib: present dependency yields PASS (exit 0) (24.4841ms)
+✔ shell lib: missing tracked path yields FAIL (exit 1) (23.1422ms)
+✔ shell lib: absent runtime path yields BLOCKED (exit 2) (22.7555ms)
+✔ shell lib: sha256 hex tokens do not trigger the phone-number pattern (68.1793ms)
+✔ shell lib: real phone-like token is still detected (80.8152ms)
+✔ CLI: check-links.mjs exits 2 on missing explicit input (43.7022ms)
+✔ CLI: lint_sdd.mjs runs and reports on the real repository (128.8476ms)
+✔ shell scripts: bash syntax check (133.8235ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 681.1059
+
+===== Required inputs =====
+PASS     input present: AGENTS.md
+PASS     input present: agent.md
+PASS     input present: CONTRIBUTING.md
+PASS     input present: README.md
+PASS     input present: SPEC.md
+PASS     input present: DESIGN.md
+PASS     input present: TASKS.md
+PASS     input present: TEST_PLAN.md
+PASS     input present: VALIDATION.md
+PASS     input present: .gitignore
+PASS     input present: .gitattributes
+PASS     input present: docs/TOOLCHAIN.md
+PASS     input present: docs/EXTRACTION.md
+PASS     input present: docs/adr/README.md
+PASS     input present: docs/changes/CHANGELOG.md
+PASS     input present: docs/migration/SDD_ARCHITECTURE_MIGRATION.md
+PASS     input present: docs/workflow/remote-build/WORKFLOW.md
+PASS     input present: specs/README.md
+PASS     input present: specs/product/README.md
+PASS     input present: specs/engineering/README.md
+PASS     input present: specs/process/README.md
+PASS     input present: specs/_template/spec.md
+PASS     input present: specs/_template/design.md
+PASS     input present: specs/_template/tasks.md
+PASS     input present: specs/_template/test-plan.md
+PASS     input present: specs/_template/validation.md
+PASS     input present: src/README.md
+PASS     input present: tests/README.md
+PASS     input present: evidence/README.md
+PASS     input present: tools/harmony/harmony_build.py
+PASS     input present: tools/harmony/README.md
+PASS     input present: tools/sdd/lib.mjs
+PASS     input present: tools/sdd/lint_sdd.mjs
+PASS     input present: tools/sdd/revision.mjs
+PASS     input present: tools/sdd/new-feature.mjs
+PASS     input present: tools/sdd/check.sh
+PASS     input present: tools/sdd/check-provenance.sh
+PASS     input present: tools/sdd/check-provenance.mjs
+PASS     input present: tools/validation/lib.sh
+PASS     input present: tools/validation/lib.mjs
+PASS     input present: tools/validation/check-links.mjs
+PASS     input present: tools/validation/tests/validators.test.mjs
+PASS     input present: tools/validation/dryrun.mjs
+
+===== summary: PASS=43 FAIL=0 BLOCKED=0 =====
+
+===== Template dry-run =====
+PASS     dependency available: node
+PASS: all three domains instantiate; links/IDs valid; duplicates, traversal and forged approval rejected.
+
+===== FAIL=0 BLOCKED=0 =====

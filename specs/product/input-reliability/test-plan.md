@@ -1,6 +1,6 @@
-# HRK v0.1.1 测试计划（未执行）
+# HRK v0.1.1 测试计划
 
-需求和通过条件仅由 [spec](spec.md) 定义，设计见 [design](design.md)，实际结果写入 [validation](validation.md)。本文件仅规划未来测试；用户明确要求本次不编码、不测试。
+需求和通过条件仅由 [spec](spec.md) 定义，设计见 [design](design.md)，实际结果写入 [validation](validation.md)。2026-09-21 TASK-001 执行文档审查；TASK-002 已执行 TEST-001 和 TEST-002 的采集范围、主机回归及 Native 编译。TASK-003 已执行外部解析、原始调度、五组合成对照及最小化测试；设备测试仍属后续任务。
 
 ## 1. 用例与验收映射
 
@@ -14,6 +14,16 @@
 | PROD-INPUT-RELIABILITY-TEST-006 | AC-005 | 分别执行原始轨迹固定调度重复、旧/新接受Replay重复及不同帧率重放；对比完整序列与分数，而非仅哈希或总分 | spec AC-005 |
 | PROD-INPUT-RELIABILITY-TEST-007 | AC-002/003/006 | 真机真人单指命中、双指交错、密集MOVE后分别释放；另行自动注入与生命周期测试；每轮保存轨迹、Replay和结果并与Headless对照 | spec AC-002/003/006 |
 | PROD-INPUT-RELIABILITY-TEST-008 | AC-006 | 既有主机核心/架构/Replay回归、Linux sanitizer、真机采集开关两种性能基线、热路径分配检查；设备支持时检查高刷新率 | spec §5、AC-006；既有指标引用v0.1.0规格 |
+| PROD-INPUT-RELIABILITY-TEST-009 | §3 S1（文档门禁，非产品 AC） | 对照现有队列/Session/时钟代码审查 schema、空值、关联、容量预算、并发冻结、注入调度和错误接口；确认用户授权范围；执行完整 SDD 检查 | spec §1、§3 S1、§4.4～4.8 |
+
+TASK-002/003 实现后对 TEST-001/002/003 增补以下执行覆盖：
+
+- 分别达到 platform/session 槽容量边界及多一条；保留最早记录、累计各来源 dropped、摘要仍可导出；用 sizeof 和分配统计核对预算；关闭采集与采集溢出两种路径对比游戏完整结果。
+- 覆盖 receive → enqueue → poll → map → pending → terminal，以及 enqueue 失败、非 Playing drain、失败 command 后 clear、ReplayFull 内部 pause、EOF 保留 pending；校验每事件唯一终态和总量对账。
+- 合法无 input 轨迹、最大/最小 i64/u64、超过范围、重复键、未知键、错 null、重复终态、缺 begin/end/sample、缺 summary、过长行、错误哈希及无效版本；拒绝原因和定位需匹配 spec §4.8。
+- 写者预留槽后暂停，控制路径开始冻结，随后写者提交；同时验证冻结超时、重试、导出失败重试及安全销毁。并发平台生产者不符合输入队列契约时不能宣称 complete。
+- 原始时间逆序、相同时间、跨 batch/poll、pending 跨 update 不重新映射；在同一 action 分别给 position 与 clockSample 不同值及失败，缺少/多余/错类型查询须明确失败。
+- CLI 成功、差异、非法/不完整输入和 I/O 失败的退出码；不得覆盖现有输出；最小夹具保留目标拒绝、源事件号及依赖，完整结果差异报告包含首个不同字段。
 
 ## 2. 调查用合成场景
 
@@ -37,7 +47,7 @@
 
 ## 4. 执行层次和命令入口
 
-实施授权后依次执行：构建 → 架构/静态检查 → 单元/轨迹测试 → Replay回归 → 真机 → 逐AC验收 → 证据归档。以下仅为现有命令参考，本次未执行；新增轨迹工具命令须在S1定稿后补入，不虚构可运行CLI。
+产品实施时依次执行：构建 → 架构/静态检查 → 单元/轨迹测试 → Replay回归 → 真机 → 逐AC验收 → 证据归档。以下为现有产品命令参考，TASK-001 未执行；TASK-003 已实现轨迹工具，命令见 spec §4.8。
 
 ```powershell
 cmake -S . -B build/host -G "Visual Studio 17 2022" -A x64
@@ -48,8 +58,26 @@ node tools/check-architecture.mjs
 
 Harmony构建与设备步骤引用 [工具链](../../../docs/TOOLCHAIN.md) 和 [DEVICE](../../../tests/DEVICE.md)。Linux sanitizer依据现有CI流程执行并保存实际日志；不能从配置存在推定通过。
 
-正式实现交付需执行 `bash tools/sdd/check.sh` 并记录结果；本次依用户“不进行编码和测试工作”的明确限制不运行，其中包含工具自测和模板演练。治理检查不替代产品验收。
+TASK-001 交付执行 `bash tools/sdd/check.sh` 并记录结果，其中包含工具自测和模板演练。Windows 使用 Git for Windows 自带 bash；治理检查不替代产品验收。后续实现交付仍须按贡献规范完成对应产品测试。
 
 ## 5. 结果记录
 
 执行后逐用例与AC记录PASS/FAIL/BLOCKED及证据。未开始保持NotRun。条件性设备不支持按spec §5记录；已知P0、必要设备项缺失及未解释影响不得计为整体验收通过。
+
+## 6. TASK-002 执行映射
+
+`ctest --test-dir build/host -C Debug --output-on-failure` 包含 `hrk_input_trace_tests`：C++ 验证采集分支，Node 独立读取导出 JSONL 检查字段、空值、原始字段一致性、连续 action/query 序号、sample/control 关联和分类对账。每次输出到新的 build 子目录，避免覆盖既有证据。
+
+- TEST-001：四 phase 的 accepted/rejected/cleared/pending；全链路、首次消费/原映射保留、epoch、pointer 边界、公共音频成功/失败查询及实际控制清理。
+- TEST-002（采集范围）：默认关闭、非法状态/原始输入、空采集/纯超时、两个输入队列满、两个诊断缓冲满、预算/热路径分配、冻结提交/超时/销毁、并发生产者、counter overflow、缺关联/边界、导出失败/重试/不覆盖、EOF pending、ReplayFull 内部 pause；诊断关闭/开启/溢出逐项比较完整游戏结果。
+- TEST-002 中外部文件的非法版本、重复键、超长输入、损坏数值等解析拒绝，按 design §6 分工留给 TASK-003；本任务不以导出器测试冒充尚未实现的解析工具验收。
+- 既有 `hrk_tests`、架构与固定 Headless Replay 一并回归；Harmony Native 编译确认接入。TEST-007/008 中的设备性能和 Linux sanitizer 尚待后续回归，不作为本任务已执行项。
+
+## 7. TASK-003 执行映射
+
+`hrk_trace_cli` CTest 项调用 `tests/check-trace-cli.mjs`，生成独立合成素材/轨迹并运行真正的 C++ CLI；测试保留在新的 build 目录，不覆盖证据。
+
+- TEST-002 外部解析范围：严格 UTF-8/JSON、重复键/未知字段/枚举/null、64 位上下界及越界、空/截断/超长行、缺 summary、阶段/批次/sample 断链、计数不符、资产哈希不符、公共查询错类型、无法放置的 epoch。失败检查退出码和定位错误；I/O、已有输出和非法结果文件独立覆盖。
+- TEST-003：重放全部完整采集合成文件，包括两个队列满、时钟成功/失败、跨 epoch、pending 原映射、纯超时和 EOF pending。五组 original/control 仅分别改变批内时间顺序、分发帧、重复输入、采样映射或未来事件时间；对比完整结果并重复同轨迹检查确定性。
+- 最小化：对批内逆序的拒绝 event 2 生成依赖闭包；验证确实删除无关 status action、保存源映射，派生 trace 再次重放仍为 before_watermark。无目标拒绝不生成成功目录。
+- 本任务完成工具测试，不替代 TEST-004/007 的真人原因调查，也不提前宣称 AC-005 的 100 次/多帧率整体验收。
