@@ -25,7 +25,9 @@ void floating(std::ostream& o,float v){if(std::isfinite(v))o<<std::setprecision(
 bool utf8(const std::string& s){
   for(size_t i=0;i<s.size();){const auto c=static_cast<unsigned char>(s[i++]);if(c<0x80)continue;
     unsigned n=0;uint32_t cp=0,min=0;if(c>=0xc2 && c<=0xdf){n=1;cp=c&31;min=0x80;}else if(c>=0xe0 && c<=0xef){n=2;cp=c&15;min=0x800;}else if(c>=0xf0 && c<=0xf4){n=3;cp=c&7;min=0x10000;}else return false;
-    if(i+n>s.size())return false;while(n--){auto b=static_cast<unsigned char>(s[i++]);if((b&0xc0)!=0x80)return false;cp=(cp<<6)|(b&63);}if(cp<min || cp>0x10ffff || (cp>=0xd800 && cp<=0xdfff))return false;
+    if(i+n>s.size())return false;
+    while(n--){auto b=static_cast<unsigned char>(s[i++]);if((b&0xc0)!=0x80)return false;cp=(cp<<6)|(b&63);}
+    if(cp<min || cp>0x10ffff || (cp>=0xd800 && cp<=0xdfff))return false;
   }return true;
 }
 bool validHeader(const TraceHeader& h){
@@ -61,7 +63,9 @@ CaptureError InputTrace::beginCapture(const TraceHeader& h,bool busy){
     platform_=std::make_unique<TraceSlot[]>(capacity);session_=std::make_unique<TraceSlot[]>(capacity);eventStates_=std::make_unique<uint8_t[]>(capacity);
   }catch(const std::bad_alloc&){platform_.reset();session_.reset();eventStates_.reset();frozen_=false;return CaptureError::CaptureAllocationFailed;}
   ++generation_;epoch_=0;events_=0;batches_=0;issues_=0;
-  for(auto& v:used_)v=0;for(auto& v:dropped_)v=0;for(auto& p:counts_)for(auto& d:p)for(auto& r:d)r=0;
+  for(auto& v:used_)v=0;
+  for(auto& v:dropped_)v=0;
+  for(auto& p:counts_)for(auto& d:p)for(auto& r:d)r=0;
   actionCounter_=updateCounter_=action_=control_=update_=0;queryIndex_=0;frozen_=false;summary_={};open_.store(true,std::memory_order_release);return CaptureError::Ok;
 }
 size_t InputTrace::allocatedBytes() const{
@@ -196,7 +200,8 @@ void InputTrace::writeJson(std::ostream& o) const{
   for(size_t p=0;p<5;++p)for(size_t d=0;d<3;++d)for(size_t r=0;r<static_cast<size_t>(TraceReason::Count);++r){auto n=counts_[p][d][r].load();if(!n)continue;if(comma)o<<',';comma=true;o<<"{\"phase\":";quoted(o,phases[p]);o<<",\"disposition\":";quoted(o,dispositions[d+3]);o<<",\"reason\":";if(!r)o<<"null";else quoted(o,reasons[r]);o<<",\"count\":";number(o,n);o<<'}';}
   o<<"],\"captureDropped\":";number(o,summary_.platformDropped+summary_.sessionDropped);o<<",\"captureDroppedBySource\":{\"platform\":";number(o,summary_.platformDropped);o<<",\"session\":";number(o,summary_.sessionDropped);o<<"},\"platformQueueDropped\":";number(o,summary_.platformQueueDropped);o<<",\"sessionQueueDropped\":";number(o,summary_.sessionQueueDropped);
   o<<",\"ingressCount\":";number(o,summary_.ingress);o<<",\"acceptedCount\":";number(o,summary_.accepted);o<<",\"rejectedCount\":";number(o,summary_.rejected);o<<",\"clearedCount\":";number(o,summary_.cleared);o<<",\"pendingAtEnd\":";number(o,summary_.pending);o<<",\"pendingEventSequences\":[";comma=false;
-  for(size_t id=0;id<capacity;++id)if((eventStates_[id]&3)==1){if(comma)o<<',';comma=true;number(o,id+1);}o<<"],\"complete\":"<<(summary_.complete?"true":"false")<<",\"incompleteReasons\":[";comma=false;
+  for(size_t id=0;id<capacity;++id)if((eventStates_[id]&3)==1){if(comma)o<<',';comma=true;number(o,id+1);}
+  o<<"],\"complete\":"<<(summary_.complete?"true":"false")<<",\"incompleteReasons\":[";comma=false;
   const auto flags=issues_.load();for(unsigned i=1;i<sizeof(errors)/sizeof(*errors);++i)if(flags&(uint32_t{1}<<i)){if(comma)o<<',';comma=true;quoted(o,errors[i]);}o<<"]}\n";
 }
 CaptureError InputTrace::exportCapture(const std::string& path) const{

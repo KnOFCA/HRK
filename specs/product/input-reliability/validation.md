@@ -98,3 +98,7 @@
 用户进一步授权检查并修复 GitHub Actions。远端最新失败为 [run 35516590462](https://github.com/KnOFCA/HRK/actions/runs/35516590462)，对应规划提交 `06df6030df54a2b81d8e26d7f33148d880280f61`；其构建和 sanitizer 测试成功，SDD 步骤失败，尚未包含本地 TASK-001～003 的实现。
 
 从该 commit 的 Git archive 在隔离目录执行原 lint，唯一失败为 `C9-terminology`：规格未定义 `Workflow Step`。TASK-001 已补齐该定义，本次将它与已完成工作正式提交；不放宽验证器。新证据使用稳定 tag，CI checkout 同时改为获取完整历史与 tags，以满足既有 provenance 门禁。GitHub 作业原始日志 API 返回 403，因此具体 C9 根因来自精确提交的本地复现，不能声称已下载远端完整日志。
+
+后续远端 [run 35697281551](https://github.com/KnOFCA/HRK/actions/runs/35697281551) 的编译注解确认 GCC `-Wmisleading-indentation` 失败：采集器 3 处、采集测试 2 处将独立语句写在同一行。本地 GCC 14.2 严格语法检查复现并修复；只拆分语句，不修改控制流、不关闭 `-Werror`。`cmake -S . -B build/gcc-make -G "MinGW Makefiles" -DCMAKE_CXX_COMPILER=D:/ForCMake/LLVM/bin/g++.exe -DCMAKE_BUILD_TYPE=Debug`、`cmake --build build/gcc-make -j 4` 通过。增加 CI 构建错误注解，保留原退出码，以便后续直接读取诊断。
+
+修复后 `ctest --test-dir build/gcc-make --output-on-failure` 5/5 PASS（14.47 秒），完整 SDD 检查再次 PASS。该本地 MinGW 运行未开启 sanitizer，Linux sanitizer 结果以修复提交的 Actions 为准。
